@@ -1,0 +1,10 @@
+---
+- hosts: s1-leaf1
+  gather_facts: no
+  tasks:
+  - name: Add vlan
+    eos_vlans:
+      config:
+      - vlan_id: 4000
+        state: active
+      state: merged
