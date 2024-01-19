@@ -1,0 +1,14 @@
+interface Vlan4094
+   ip address 192.168.255.12/30
+!
+interface Port-Channel10
+   switchport mode trunk
+   mlag 10
+!
+interface Ethernet1
+   channel-group 10 mode active
+!
+interface Ethernet5
+   channel-group 10 mode active
+!
+no spanning-tree vlan 4094

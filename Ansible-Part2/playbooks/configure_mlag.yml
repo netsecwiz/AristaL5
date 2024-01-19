@@ -1,0 +1,30 @@
+---
+- name: Configure MLAG on Left/odd Leafs and Border Leafs
+  hosts: left_leafs
+  gather_facts: no
+  tasks:
+    - name: Deploy MLAG configuration for left side
+      template:
+        src: templates/mlag_left.j2
+        dest: configs/mlag_config.conf
+      delegate_to: localhost
+
+    - name: Apply MLAG configuration on the device
+      eos_config:
+        src: playbooks/mlag_config.conf
+      when: inventory_hostname in groups['left_leafs']
+
+- name: Configure MLAG on Right/even Leafs and Border Leafs
+  hosts: right_leafs
+  gather_facts: no
+  tasks:
+    - name: Deploy MLAG configuration for right side
+      template:
+        src: templates/mlag_right.j2
+        dest: configs/mlag_config.conf
+      delegate_to: localhost
+
+    - name: Apply MLAG configuration on the device
+      eos_config:
+        src: configs/mlag_config.conf
+      when: inventory_hostname in groups['right_leafs']
