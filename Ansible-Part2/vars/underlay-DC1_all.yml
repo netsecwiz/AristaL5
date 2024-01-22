@@ -1,3 +1,18 @@
+global:
+  DC1:
+    spine_ASN: 65100
+    p2p: "192.168.103.0/24"
+    lo0: "192.168.101.0/24"
+    spine_peers:
+      - 192.168.101.101
+      - 192.168.101.102
+  DC2:
+    spine_ASN: 65200
+    p2p: "192.168.203.0/24"
+    lo0: "192.168.201.0/24"
+    spine_peers:
+      - 192.168.201.101
+      - 192.168.201.102
 # Spines Configuration
 s1-spine1:
   interfaces:
@@ -8,19 +23,22 @@ s1-spine1:
       ipv4: 192.168.103.1
       mask: 31
     Ethernet3: 
-      ipv4: 192.168.103.7
+      ipv4: 192.168.103.5
       mask: 31
     Ethernet4:
-      ipv4: 192.168.103.13
+      ipv4: 192.168.103.9
       mask: 31
     Ethernet5:
-      ipv4: 192.168.103.19
+      ipv4: 192.168.103.13
       mask: 31
     Ethernet6:
-      ipv4: 192.168.103.25
+      ipv4: 192.168.103.17
       mask: 31
     Ethernet7:
-      ipv4: 192.168.103.31
+      ipv4: 192.168.103.21
+      mask: 31
+    Ethernet8:
+      ipv4: 192.168.103.25
       mask: 31
   ASN: 65100
 
@@ -33,19 +51,22 @@ s1-spine2:
       ipv4: 192.168.103.3
       mask: 31
     Ethernet3:
-      ipv4: 192.168.103.9
+      ipv4: 192.168.103.7
       mask: 31
     Ethernet4:
-      ipv4: 192.168.103.15
+      ipv4: 192.168.103.11
       mask: 31
     Ethernet5:
-      ipv4: 192.168.103.21
+      ipv4: 192.168.103.15
       mask: 31
     Ethernet6:
-      ipv4: 192.168.103.27
+      ipv4: 192.168.103.19
       mask: 31
     Ethernet7:
-      ipv4: 192.168.103.33
+      ipv4: 192.168.103.23
+      mask: 31
+    Ethernet8:
+      ipv4: 192.168.103.27
       mask: 31
   ASN: 65100
 
@@ -58,39 +79,120 @@ s1-leaf1:
     loopback1:
       ipv4: 192.168.102.11
       mask: 32
-    Ethernet3: 192.168.103.0
-    Ethernet4: 192.168.103.2
-    Ethernet5: 192.168.103.4
+    Ethernet2:
+      ipv4: 192.168.103.0
+      mask: 31
+    Ethernet3: 
+      ipv4: 192.168.103.2
+      mask: 31
   ASN: 65101
   spine-peers:
     - 192.168.103.1
     - 192.168.103.3
 
 s1-leaf2:
-  # ... Add configurations for s1-leaf2 ...
-
-s1-leaf3:
-  # ... Add configurations for s1-leaf3 ...
-
-s1-leaf4:
-  # ... Add configurations for s1-leaf4 ...
-
-# Border Leaves Configuration
-s1-borderleaf1:
-  # ... Add configurations for s1-borderleaf1 ...
-
-s1-borderleaf2:
-  # ... Add configurations for s1-borderleaf2 ...
-
-# DCI Configuration
-s1-Core1:
   interfaces:
     loopback0:
-      ipv4: 192.168.200.1
+      ipv4: 192.168.101.12
       mask: 32
-    # Assuming Ethernet4 connects to the DCI, adjust the interface number as necessary
+    loopback1:
+      ipv4: 192.168.102.11
+      mask: 32
+    Ethernet2: 
+      ipv4: 192.168.103.4
+      mask: 31
+    Ethernet3: 
+      ipv4: 192.168.103.6
+      mask: 31
+  ASN: 65101
+  spine-peers:
+    - 192.168.103.5
+    - 192.168.103.7
+
+s1-leaf3:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.101.13
+      mask: 32
+    loopback1:
+      ipv4: 192.168.102.13
+      mask: 32
+    Ethernet2: 
+      ipv4: 192.168.103.8
+      mask: 31
+    Ethernet3: 
+      ipv4: 192.168.103.10
+      mask: 31
+  ASN: 65102
+  spine-peers:
+    - 192.168.103.9
+    - 192.168.103.11
+
+s1-leaf4:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.101.14
+      mask: 32
+    loopback1:
+      ipv4: 192.168.102.13
+      mask: 32
+    Ethernet2: 
+      ipv4: 192.168.103.12
+      mask: 31
+    Ethernet3: 
+      ipv4: 192.168.103.14
+      mask: 31
+  ASN: 65102
+  spine-peers:
+    - 192.168.103.13
+    - 192.168.103.15
+
+# Border Leaves Configuration
+s1-Brdr1:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.101.15
+      mask: 32
+    loopback1:
+      ipv4: 192.168.102.15
+      mask: 32
+    Ethernet2: 
+      ipv4: 192.168.103.16
+      mask: 31
+    Ethernet3: 
+      ipv4: 192.168.103.18
+      mask: 31
     Ethernet4: 
       ipv4: 192.168.254.0
       mask: 31
-  ASN: 65000
-  # Add configurations for any BGP peers or additional interfaces
+  ASN: 65103
+  spine-peers:
+    - 192.168.103.17
+    - 192.168.103.19
+  DCI-peers:
+    - 192.168.254.1
+
+s1-Brdr2:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.101.16
+      mask: 32
+    loopback1:
+      ipv4: 192.168.102.15
+      mask: 32
+    Ethernet2: 
+      ipv4: 192.168.103.20
+      mask: 31
+    Ethernet3: 
+      ipv4: 192.168.103.22
+      mask: 31
+    Ethernet4: 
+      ipv4: 192.168.254.2
+      mask: 31
+  ASN: 65103
+  spine-peers:
+    - 192.168.103.21
+    - 192.168.103.23
+  DCI-peers:
+    - 192.168.254.3
+

@@ -48,7 +48,7 @@ bgp listen range {{ underlay['global']['DC1']['lo0']}} peer-group EVPN peer-filt
   {% if 'DC2' in inventory_hostname %}
 bgp listen range {{ underlay['global']['DC2']['lo0']}} peer-group EVPN peer-filter LEAF-AS-RANGE
   {% endif %}  
-  
+
    neighbor EVPN update-source Loopback0
    neighbor EVPN ebgp-multihop 3
    neighbor EVPN send-community extended

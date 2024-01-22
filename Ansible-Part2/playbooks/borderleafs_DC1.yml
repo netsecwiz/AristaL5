@@ -1,0 +1,17 @@
+---
+- hosts: borderleafs_DC1
+  gather_facts: no
+  tasks:
+    - name: Register variables from underlay-DC1_all.yml
+      include_vars:
+        file: "{{lookup('env','PWD')}}/vars/underlay-DC1_all.yml"  
+        name: underlay       
+    - name: Create Leaf Configuration
+      template:
+        src: "{{lookup('env','PWD')}}/templates/borderleaf.j2"
+        dest: "{{lookup('env','PWD')}}/configs/{{ inventory_hostname }}_config.conf"
+    # Move the task that uses the 'underlay' variable to a separate task
+    - name: Push Configuration to Device
+      # Use appropriate module like ios_config, eos_config, etc.
+      eos_config:
+        src: "{{lookup('env','PWD')}}/configs/{{ inventory_hostname }}_config.conf"
