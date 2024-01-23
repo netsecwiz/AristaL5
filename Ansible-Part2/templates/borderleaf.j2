@@ -1,76 +1,13 @@
-service routing protocols model multi-agent
+router bgp {{ underlay[inventory_hostname]['BGP']['ASN'] }}
 
-{% for interface, details in underlay[inventory_hostname]['interfaces'].items() %}
-interface {{ interface }}
-  {% if details.ipv4 is defined %}
-  ip address {{ details.ipv4 }}/{{ details.mask }}
-    {% if 'Ethernet' in interface %}
-    no switchport
-    mtu 9214
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
-ip prefix-list LOOPBACK
-    seq 10 permit 192.168.101.0/24 eq 32
-    seq 20 permit 192.168.102.0/24 eq 32
-    seq 30 permit 192.168.201.0/24 eq 32
-    seq 40 permit 192.168.202.0/24 eq 32
-    seq 50 permit 192.168.253.0/24 eq 32
-
-route-map LOOPBACK permit 10
-   match ip address prefix-list LOOPBACK
-
-peer-filter LEAF-AS-RANGE
- 10 match as-range 65000-65535 result accept
-
-router bgp {{ underlay[inventory_hostname]['ASN'] }}
-   router-id {{ underlay[inventory_hostname]['interfaces']['loopback0']['ipv4'] }}
-   no bgp default ipv4-unicast
-   maximum-paths 3
-   distance bgp 20 200 200
+   neighbor DCI peer group
+   neighbor DCI remote-as 65000
+   neighbor DCI maximum-routes 12000
 
 
-  {% if 'DC1' in inventory_hostname %}
-bgp listen range {{ underlay['global']['DC1']['p2p']}} peer-group LEAF_Underlay peer-filter LEAF-AS-RANGE
-  {% endif %}
-  {% if 'DC2' in inventory_hostname %}
-bgp listen range {{ underlay['global']['DC2']['p2p']}} peer-group LEAF_Underlay peer-filter LEAF-AS-RANGE
-  {% endif %}  
-   neighbor LEAF_Underlay peer group
-   neighbor LEAF_Underlay send-community
-   neighbor LEAF_Underlay maximum-routes 12000
-   
-
-  neighbor EVPN peer group
-  {% if 'DC1' in inventory_hostname %}
-   neighbor EVPN remote-as {{ underlay['global']['DC1']['spine_ASN']}} 
-  {% endif %}  
-  {% if 'DC2' in inventory_hostname %}
-   neighbor EVPN remote-as {{ underlay['global']['DC2']['spine_ASN']}} 
-  {% endif %}  
-
- neighbor EVPN update-source Loopback0
- neighbor EVPN allowas-in 1
- neighbor EVPN ebgp-multihop 3
- neighbor EVPN send-community extended
- neighbor EVPN maximum-routes 12000
-  
-{% if 'DC1' in inventory_hostname %}
-{% for peer in underlay['global']['DC1']['spine_peers'] %}
-   neighbor {{ peer }} peer group EVPN
+{% for peer in underlay[inventory_hostname]['BGP']['DCI-peers'] %}
+   neighbor {{ peer }} peer group DCI
 {% endfor %}   
-  {% endif %}  
-{% if 'DC2' in inventory_hostname %}
-{% for peer in underlay['global']['DC2']['spine_peers'] %}
-   neighbor {{ peer }} peer group EVPN
-{% endfor %}   
-  {% endif %}  
- !
-   address-family evpn
-     neighbor EVPN activate
-   
+
    address-family ipv4
-     neighbor Underlay activate
-     neighbor LEAF_Peer activate
-     redistribute connected route-map LOOPBACK
+     neighbor DCI activate

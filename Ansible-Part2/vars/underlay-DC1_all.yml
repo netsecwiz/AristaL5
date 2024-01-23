@@ -184,7 +184,7 @@ s1-Brdr1:
     spine-ASN: 65100       
     DCI-peers:
         - 192.168.254.1
-    MLAG: Odd
+  MLAG: Odd
 s1-Brdr2:
   interfaces:
     loopback0:

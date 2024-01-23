@@ -9,9 +9,9 @@
     - name: Create Leaf Configuration
       template:
         src: "{{lookup('env','PWD')}}/templates/borderleaf.j2"
-        dest: "{{lookup('env','PWD')}}/configs/{{ inventory_hostname }}_config.conf"
+        dest: "{{lookup('env','PWD')}}/configs/{{ inventory_hostname }}_config_bl.conf"
     # Move the task that uses the 'underlay' variable to a separate task
     - name: Push Configuration to Device
       # Use appropriate module like ios_config, eos_config, etc.
       eos_config:
-        src: "{{lookup('env','PWD')}}/configs/{{ inventory_hostname }}_config.conf"
+        src: "{{lookup('env','PWD')}}/configs/{{ inventory_hostname }}_config_bl.conf"

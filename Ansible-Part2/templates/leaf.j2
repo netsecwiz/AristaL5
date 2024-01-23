@@ -1,14 +1,12 @@
 service routing protocols model multi-agent
 
-{% for interface, details in underlay[inventory_hostname]['interfaces'].items() %}
-interface {{ interface }}
-  {% if details.ipv4 is defined %}
-  ip address {{ details.ipv4 }}/{{ details.mask }}
-    {% if 'Ethernet' in interface %}
-    no switchport
-    mtu 9214
-    {% endif %}
-  {% endif %}
+{% for item in underlay[inventory_hostname]['interfaces'] %}
+interface {{ item }}
+   ip address {{ underlay[inventory_hostname]['interfaces'][item]['ipv4']}}/{{ underlay[inventory_hostname]['interfaces'][item]['mask']}}
+   {% if 'Ethernet' in item %}
+   no switchport
+   mtu {{ underlay['global']['MTU'] }}
+{% endif %}
 {% endfor %}
 
 ip prefix-list LOOPBACK
@@ -21,32 +19,39 @@ ip prefix-list LOOPBACK
 route-map LOOPBACK permit 10
    match ip address prefix-list LOOPBACK
 
-peer-filter LEAF-AS-RANGE
- 10 match as-range 65000-65535 result accept
+router bgp {{ underlay[inventory_hostname]['BGP']['ASN'] }}
+   router-id {{ underlay[inventory_hostname]['interfaces']['loopback0']['ipv4']}}
 
-router bgp {{ underlay[inventory_hostname]['ASN'] }}
-   router-id {{ underlay[inventory_hostname]['interfaces']['loopback0']['ipv4'] }}
    no bgp default ipv4-unicast
    maximum-paths 3
    distance bgp 20 200 200
 
 
-  {% if 'DC1' in inventory_hostname %}
-bgp listen range {{ underlay['global']['DC1']['p2p']}} peer-group LEAF_Underlay peer-filter LEAF-AS-RANGE
-  {% endif %}
-  {% if 'DC2' in inventory_hostname %}
-bgp listen range {{ underlay['global']['DC2']['p2p']}} peer-group LEAF_Underlay peer-filter LEAF-AS-RANGE
-  {% endif %}  
-   neighbor LEAF_Underlay peer group
-   neighbor LEAF_Underlay send-community
-   neighbor LEAF_Underlay maximum-routes 12000
-   
+   neighbor Underlay peer group  
+   neighbor Underlay remote-as {{ underlay[inventory_hostname]['BGP']['spine-ASN'] }}
+   neighbor Underlay send-community
+   neighbor Underlay maximum-routes 12000
+
+   neighbor LEAF_Peer peer group
+   neighbor LEAF_Peer remote-as {{ underlay[inventory_hostname]['BGP']['ASN'] }}
+   neighbor LEAF_Peer next-hop-self
+   neighbor LEAF_Peer maximum-routes 12000
+
+
+{% for peer in underlay[inventory_hostname]['BGP']['spine-peers'] %}
+   neighbor {{ peer }} peer group Underlay
+{% endfor %}   
+{% if underlay[inventory_hostname]['MLAG'] == "Odd" %}
+   neighbor 192.168.255.2 peer group LEAF_Peer
+   {% else %}
+   neighbor 192.168.255.1 peer group LEAF_Peer
+{% endif %}
 
   neighbor EVPN peer group
-  {% if 'DC1' in inventory_hostname %}
+  {% if 's1-' in inventory_hostname %}
    neighbor EVPN remote-as {{ underlay['global']['DC1']['spine_ASN']}} 
   {% endif %}  
-  {% if 'DC2' in inventory_hostname %}
+  {% if 's2-' in inventory_hostname %}
    neighbor EVPN remote-as {{ underlay['global']['DC2']['spine_ASN']}} 
   {% endif %}  
 
@@ -56,12 +61,12 @@ bgp listen range {{ underlay['global']['DC2']['p2p']}} peer-group LEAF_Underlay 
  neighbor EVPN send-community extended
  neighbor EVPN maximum-routes 12000
   
-{% if 'DC1' in inventory_hostname %}
+{% if 's1-' in inventory_hostname %}
 {% for peer in underlay['global']['DC1']['spine_peers'] %}
    neighbor {{ peer }} peer group EVPN
 {% endfor %}   
   {% endif %}  
-{% if 'DC2' in inventory_hostname %}
+{% if 's2-' in inventory_hostname %}
 {% for peer in underlay['global']['DC2']['spine_peers'] %}
    neighbor {{ peer }} peer group EVPN
 {% endfor %}   
