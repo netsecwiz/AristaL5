@@ -73,6 +73,7 @@ router bgp {{ underlay[inventory_hostname]['BGP']['ASN'] }}
   {% endif %}  
  !
    address-family evpn
+     bgp next-hop-unchanged  
      neighbor EVPN activate
    
    address-family ipv4

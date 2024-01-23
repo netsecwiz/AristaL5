@@ -59,6 +59,7 @@ bgp listen range {{ underlay['global']['DC2']['lo0']}} peer-group EVPN peer-filt
    redistribute connected route-map LOOPBACK
    
    address-family evpn
+     bgp next-hop-unchanged   
      neighbor EVPN activate
    address-family ipv4
      neighbor LEAF_Underlay activate

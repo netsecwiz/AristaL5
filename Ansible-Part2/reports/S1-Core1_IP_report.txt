@@ -1,0 +1,7 @@
+This file contains the IP information (a la 'show ip interface brief') for S1-Core1
+
+The IP address of loopback0 is 192.168.253.1
+The IP address of Ethernet1 is 192.168.254.7
+The IP address of Ethernet2 is 192.168.254.1
+The IP address of Ethernet3 is 192.168.254.3
+The IP address of Ethernet4 is 192.168.254.5

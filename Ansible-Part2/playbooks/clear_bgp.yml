@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Reset BGP sessions on all Arista hosts
+      eos_command:
+        commands:
+          - "clear ip bgp *"

@@ -32,14 +32,11 @@ s1-spine1:
     Ethernet5:
       ipv4: 192.168.103.13
       mask: 31
-    Ethernet6:
+    Ethernet7:
       ipv4: 192.168.103.17
       mask: 31
-    Ethernet7:
-      ipv4: 192.168.103.21
-      mask: 31
     Ethernet8:
-      ipv4: 192.168.103.25
+      ipv4: 192.168.103.21
       mask: 31
   BGP:
     ASN: 65100
@@ -48,7 +45,7 @@ s1-spine2:
   interfaces:
     loopback0:
       ipv4: 192.168.101.102
-      mask: 31
+      mask: 32
     Ethernet2:
       ipv4: 192.168.103.3
       mask: 31
@@ -61,14 +58,11 @@ s1-spine2:
     Ethernet5:
       ipv4: 192.168.103.15
       mask: 31
-    Ethernet6:
+    Ethernet7:
       ipv4: 192.168.103.19
       mask: 31
-    Ethernet7:
-      ipv4: 192.168.103.23
-      mask: 31
     Ethernet8:
-      ipv4: 192.168.103.27
+      ipv4: 192.168.103.23
       mask: 31
   BGP:
     ASN: 65100

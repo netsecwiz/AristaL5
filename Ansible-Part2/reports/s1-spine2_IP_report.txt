@@ -1,0 +1,10 @@
+This file contains the IP information (a la 'show ip interface brief') for s1-spine2
+
+The IP address of loopback0 is 192.168.101.102
+The IP address of Ethernet2 is 192.168.103.3
+The IP address of Ethernet3 is 192.168.103.7
+The IP address of Ethernet4 is 192.168.103.11
+The IP address of Ethernet5 is 192.168.103.15
+The IP address of Ethernet6 is 192.168.103.19
+The IP address of Ethernet7 is 192.168.103.23
+The IP address of Ethernet8 is 192.168.103.27

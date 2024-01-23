@@ -1,0 +1,6 @@
+This file contains the IP information (a la 'show ip interface brief') for s2-leaf4
+
+The IP address of loopback0 is 192.168.201.14
+The IP address of loopback1 is 192.168.202.13
+The IP address of Ethernet2 is 192.168.203.12
+The IP address of Ethernet3 is 192.168.203.14
