@@ -13,6 +13,7 @@ global:
     spine_peers:
       - 192.168.201.101
       - 192.168.201.102
+  MTU: 9214      
 # Spines Configuration
 s2-spine1:
   interfaces:
@@ -40,6 +41,7 @@ s2-spine1:
     Ethernet8:
       ipv4: 192.168.203.25
       mask: 31
+BGP:
   ASN: 65100
 
 s2-spine2:
@@ -68,6 +70,7 @@ s2-spine2:
     Ethernet8:
       ipv4: 192.168.203.27
       mask: 31
+BGP:
   ASN: 65100
 
 # Leaves Configuration
@@ -85,6 +88,7 @@ s2-leaf1:
     Ethernet3: 
       ipv4: 192.168.203.2
       mask: 31
+BGP:
   ASN: 65101
   spine-peers:
     - 192.168.203.1
@@ -104,6 +108,7 @@ s2-leaf2:
     Ethernet3: 
       ipv4: 192.168.203.6
       mask: 31
+BGP:
   ASN: 65101
   spine-peers:
     - 192.168.203.5
@@ -123,6 +128,7 @@ s2-leaf3:
     Ethernet3: 
       ipv4: 192.168.203.10
       mask: 31
+BGP:
   ASN: 65102
   spine-peers:
     - 192.168.203.9
@@ -142,6 +148,7 @@ s2-leaf4:
     Ethernet3: 
       ipv4: 192.168.203.14
       mask: 31
+BGP:
   ASN: 65102
   spine-peers:
     - 192.168.203.13
@@ -165,6 +172,7 @@ s2-Brdr1:
     Ethernet4: 
       ipv4: 192.168.254.4
       mask: 31
+BGP:
   ASN: 65103
   spine-peers:
     - 192.168.203.17
@@ -189,6 +197,7 @@ s2-Brdr2:
     Ethernet4: 
       ipv4: 192.168.254.2
       mask: 31
+BGP:
   ASN: 65103
   spine-peers:
     - 192.168.203.21

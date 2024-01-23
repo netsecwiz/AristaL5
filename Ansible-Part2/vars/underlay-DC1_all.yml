@@ -13,6 +13,7 @@ global:
     spine_peers:
       - 192.168.201.101
       - 192.168.201.102
+  MTU: 9214      
 # Spines Configuration
 s1-spine1:
   interfaces:
@@ -40,7 +41,8 @@ s1-spine1:
     Ethernet8:
       ipv4: 192.168.103.25
       mask: 31
-  ASN: 65100
+  BGP:
+    ASN: 65100
 
 s1-spine2:
   interfaces:
@@ -68,7 +70,8 @@ s1-spine2:
     Ethernet8:
       ipv4: 192.168.103.27
       mask: 31
-  ASN: 65100
+  BGP:
+    ASN: 65100
 
 # Leaves Configuration
 s1-leaf1:
@@ -85,11 +88,13 @@ s1-leaf1:
     Ethernet3: 
       ipv4: 192.168.103.2
       mask: 31
-  ASN: 65101
-  spine-peers:
-    - 192.168.103.1
-    - 192.168.103.3
-
+  BGP:  
+    ASN: 65101
+    spine-peers:
+      - 192.168.103.1
+      - 192.168.103.3
+    spine-ASN: 65100    
+  MLAG: Odd
 s1-leaf2:
   interfaces:
     loopback0:
@@ -104,11 +109,13 @@ s1-leaf2:
     Ethernet3: 
       ipv4: 192.168.103.6
       mask: 31
-  ASN: 65101
-  spine-peers:
-    - 192.168.103.5
-    - 192.168.103.7
-
+  BGP: 
+    ASN: 65101
+    spine-peers:
+      - 192.168.103.5
+      - 192.168.103.7
+    spine-ASN: 65100   
+  MLAG: Even
 s1-leaf3:
   interfaces:
     loopback0:
@@ -123,11 +130,13 @@ s1-leaf3:
     Ethernet3: 
       ipv4: 192.168.103.10
       mask: 31
-  ASN: 65102
-  spine-peers:
-    - 192.168.103.9
-    - 192.168.103.11
-
+  BGP:
+    ASN: 65102
+    spine-peers:
+      - 192.168.103.9
+      - 192.168.103.11
+    spine-ASN: 65100   
+  MLAG: Odd
 s1-leaf4:
   interfaces:
     loopback0:
@@ -142,11 +151,13 @@ s1-leaf4:
     Ethernet3: 
       ipv4: 192.168.103.14
       mask: 31
-  ASN: 65102
-  spine-peers:
-    - 192.168.103.13
-    - 192.168.103.15
-
+  BGP:
+    ASN: 65102
+    spine-peers:
+      - 192.168.103.13
+      - 192.168.103.15
+    spine-ASN: 65100   
+  MLAG: Even
 # Border Leaves Configuration
 s1-Brdr1:
   interfaces:
@@ -165,13 +176,15 @@ s1-Brdr1:
     Ethernet4: 
       ipv4: 192.168.254.0
       mask: 31
-  ASN: 65103
-  spine-peers:
-    - 192.168.103.17
-    - 192.168.103.19
-  DCI-peers:
-    - 192.168.254.1
-
+  BGP:
+    ASN: 65103
+    spine-peers:
+        - 192.168.103.17
+        - 192.168.103.19
+    spine-ASN: 65100       
+    DCI-peers:
+        - 192.168.254.1
+    MLAG: Odd
 s1-Brdr2:
   interfaces:
     loopback0:
@@ -189,10 +202,12 @@ s1-Brdr2:
     Ethernet4: 
       ipv4: 192.168.254.2
       mask: 31
-  ASN: 65103
-  spine-peers:
-    - 192.168.103.21
-    - 192.168.103.23
-  DCI-peers:
-    - 192.168.254.3
-
+  BGP:  
+    ASN: 65103
+    spine-peers:
+        - 192.168.103.21
+        - 192.168.103.23
+    spine-ASN: 65100           
+    DCI-peers:
+        - 192.168.254.3
+  MLAG: Even
