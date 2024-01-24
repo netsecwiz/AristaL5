@@ -1,0 +1,1827 @@
+global: {}
+leaves:
+  s1-leaf1:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.2
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.2
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.0
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.0
+        mask: 32
+  s1-leaf10:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.38
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.38
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.36
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.36
+        mask: 32
+  s1-leaf11:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.42
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.42
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.40
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.40
+        mask: 32
+  s1-leaf12:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.46
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.46
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.44
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.44
+        mask: 32
+  s1-leaf13:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.50
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.50
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.48
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.48
+        mask: 32
+  s1-leaf14:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.54
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.54
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.52
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.52
+        mask: 32
+  s1-leaf15:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.58
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.58
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.56
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.56
+        mask: 32
+  s1-leaf16:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.62
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.62
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.60
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.60
+        mask: 32
+  s1-leaf17:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.66
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.66
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.64
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.64
+        mask: 32
+  s1-leaf18:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.70
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.70
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.68
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.68
+        mask: 32
+  s1-leaf19:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.74
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.74
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.72
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.72
+        mask: 32
+  s1-leaf2:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.6
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.6
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.4
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.4
+        mask: 32
+  s1-leaf20:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.78
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.78
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.76
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.76
+        mask: 32
+  s1-leaf21:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.82
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.82
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.80
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.80
+        mask: 32
+  s1-leaf22:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.86
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.86
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.84
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.84
+        mask: 32
+  s1-leaf23:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.90
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.90
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.88
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.88
+        mask: 32
+  s1-leaf24:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.94
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.94
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.92
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.92
+        mask: 32
+  s1-leaf25:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.98
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.98
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.96
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.96
+        mask: 32
+  s1-leaf26:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.102
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.102
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.100
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.100
+        mask: 32
+  s1-leaf27:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.106
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.106
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.104
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.104
+        mask: 32
+  s1-leaf28:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.110
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.110
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.108
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.108
+        mask: 32
+  s1-leaf29:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.114
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.114
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.112
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.112
+        mask: 32
+  s1-leaf3:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.10
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.10
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.8
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.8
+        mask: 32
+  s1-leaf30:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.118
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.118
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.116
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.116
+        mask: 32
+  s1-leaf31:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.122
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.122
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.120
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.120
+        mask: 32
+  s1-leaf32:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.126
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.126
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.124
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.124
+        mask: 32
+  s1-leaf33:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.130
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.130
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.128
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.128
+        mask: 32
+  s1-leaf34:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.134
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.134
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.132
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.132
+        mask: 32
+  s1-leaf35:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.138
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.138
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.136
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.136
+        mask: 32
+  s1-leaf36:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.142
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.142
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.140
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.140
+        mask: 32
+  s1-leaf37:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.146
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.146
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.144
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.144
+        mask: 32
+  s1-leaf38:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.150
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.150
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.148
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.148
+        mask: 32
+  s1-leaf39:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.154
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.154
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.152
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.152
+        mask: 32
+  s1-leaf4:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.14
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.14
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.12
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.12
+        mask: 32
+  s1-leaf40:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.158
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.158
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.156
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.156
+        mask: 32
+  s1-leaf41:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.162
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.162
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.160
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.160
+        mask: 32
+  s1-leaf42:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.166
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.166
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.164
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.164
+        mask: 32
+  s1-leaf43:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.170
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.170
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.168
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.168
+        mask: 32
+  s1-leaf44:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.174
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.174
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.172
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.172
+        mask: 32
+  s1-leaf45:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.178
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.178
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.176
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.176
+        mask: 32
+  s1-leaf46:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.182
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.182
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.180
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.180
+        mask: 32
+  s1-leaf47:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.186
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.186
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.184
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.184
+        mask: 32
+  s1-leaf48:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.190
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.190
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.188
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.188
+        mask: 32
+  s1-leaf49:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.194
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.194
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.192
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.192
+        mask: 32
+  s1-leaf5:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.18
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.18
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.16
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.16
+        mask: 32
+  s1-leaf50:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.198
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.198
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.196
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.196
+        mask: 32
+  s1-leaf51:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.202
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.202
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.200
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.200
+        mask: 32
+  s1-leaf52:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.206
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.206
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.204
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.204
+        mask: 32
+  s1-leaf53:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.210
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.210
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.208
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.208
+        mask: 32
+  s1-leaf54:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.214
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.214
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.212
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.212
+        mask: 32
+  s1-leaf55:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.218
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.218
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.216
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.216
+        mask: 32
+  s1-leaf56:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.222
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.222
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.220
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.220
+        mask: 32
+  s1-leaf57:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.226
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.226
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.224
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.224
+        mask: 32
+  s1-leaf58:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.230
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.230
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.228
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.228
+        mask: 32
+  s1-leaf59:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.234
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.234
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.232
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.232
+        mask: 32
+  s1-leaf6:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.22
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.22
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.20
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.20
+        mask: 32
+  s1-leaf60:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.238
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.238
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.236
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.236
+        mask: 32
+  s1-leaf61:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.242
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.242
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.240
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.240
+        mask: 32
+  s1-leaf62:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.246
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.246
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.244
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.244
+        mask: 32
+  s1-leaf63:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.250
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.250
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.248
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.248
+        mask: 32
+  s1-leaf64:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.254
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.254
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.252
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.252
+        mask: 32
+  s1-leaf65:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.2
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.2
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.0
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.0
+        mask: 32
+  s1-leaf66:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.6
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.6
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.4
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.4
+        mask: 32
+  s1-leaf67:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.10
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.10
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.8
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.8
+        mask: 32
+  s1-leaf68:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.14
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.14
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.12
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.12
+        mask: 32
+  s1-leaf69:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.18
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.18
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.16
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.16
+        mask: 32
+  s1-leaf7:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.26
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.26
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.24
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.24
+        mask: 32
+  s1-leaf70:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.22
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.22
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.20
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.20
+        mask: 32
+  s1-leaf71:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.26
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.26
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.24
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.24
+        mask: 32
+  s1-leaf72:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.30
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.30
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.28
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.28
+        mask: 32
+  s1-leaf73:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.34
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.34
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.32
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.32
+        mask: 32
+  s1-leaf74:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.38
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.38
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.36
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.36
+        mask: 32
+  s1-leaf75:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.42
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.42
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.40
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.40
+        mask: 32
+  s1-leaf76:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.46
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.46
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.44
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.44
+        mask: 32
+  s1-leaf77:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.50
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.50
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.48
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.48
+        mask: 32
+  s1-leaf78:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.54
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.54
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.52
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.52
+        mask: 32
+  s1-leaf79:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.58
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.58
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.56
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.56
+        mask: 32
+  s1-leaf8:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.30
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.30
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.28
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.28
+        mask: 32
+  s1-leaf80:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.62
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.62
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.60
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.60
+        mask: 32
+  s1-leaf81:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.66
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.66
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.64
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.64
+        mask: 32
+  s1-leaf82:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.70
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.70
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.68
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.68
+        mask: 32
+  s1-leaf83:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.74
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.74
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.72
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.72
+        mask: 32
+  s1-leaf84:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.78
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.78
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.76
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.76
+        mask: 32
+  s1-leaf85:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.82
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.82
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.80
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.80
+        mask: 32
+  s1-leaf86:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.86
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.86
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.84
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.84
+        mask: 32
+  s1-leaf87:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.90
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.90
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.88
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.88
+        mask: 32
+  s1-leaf88:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.94
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.94
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.92
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.92
+        mask: 32
+  s1-leaf89:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.98
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.98
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.96
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.96
+        mask: 32
+  s1-leaf9:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.80.34
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.80.34
+        mask: 31
+      loopback0:
+        ipv4: 172.16.80.32
+        mask: 32
+      loopback1:
+        ipv4: 172.17.80.32
+        mask: 32
+  s1-leaf90:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.102
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.102
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.100
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.100
+        mask: 32
+  s1-leaf91:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.106
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.106
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.104
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.104
+        mask: 32
+  s1-leaf92:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.110
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.110
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.108
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.108
+        mask: 32
+  s1-leaf93:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.114
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.114
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.112
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.112
+        mask: 32
+  s1-leaf94:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.118
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.118
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.116
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.116
+        mask: 32
+  s1-leaf95:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Odd
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.122
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.122
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.120
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.120
+        mask: 32
+  s1-leaf96:
+    BGP:
+      ASN: 65101
+      spine-ASN: 65100
+      spine-peers: []
+    MLAG: Even
+    interfaces:
+      Ethernet2:
+        ipv4: 172.16.81.126
+        mask: 31
+      Ethernet3:
+        ipv4: 172.17.81.126
+        mask: 31
+      loopback0:
+        ipv4: 172.16.81.124
+        mask: 32
+      loopback1:
+        ipv4: 172.17.81.124
+        mask: 32
+spines: {}
