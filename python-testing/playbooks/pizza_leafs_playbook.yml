@@ -1,0 +1,15 @@
+---
+- hosts: leafs_pizza
+  gather_facts: no
+  tasks:
+    - name: Register variables from underlay-pizza_all.yml
+      include_vars:
+        file: "{{lookup('env','PWD')}}/vars/underlay-pizza_all.yml"  
+        name: underlay       
+    - name: Create Leafs Configuration
+      template:
+        src: "{{lookup('env','PWD')}}/templates/leaf.j2"
+        dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_config_bgp.conf"
+    # Push Configuration to Device
+    eos_config:
+        src: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_config_bgp.conf"

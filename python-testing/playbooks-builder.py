@@ -34,15 +34,15 @@ def generate_playbook(dc_name, group_name, template_file, dest_file_suffix):
   tasks:
     - name: Register variables from underlay-{dc_name}_all.yml
       include_vars:
-        file: "{{{{{lookup('env','PWD')}}}}}/vars/underlay-{dc_name}_all.yml"  
+        file: "{{{{lookup('env','PWD')}}}}/vars/underlay-{dc_name}_all.yml"  
         name: underlay       
     - name: Create {group_name.capitalize()} Configuration
       template:
-        src: "{{{{{lookup('env','PWD')}}}}}/templates/{template_file}.j2"
-        dest: "{{{{{lookup('env','PWD')}}}}}/configs/{{{{ inventory_hostname }}}}_config_{dest_file_suffix}.conf"
+        src: "{{{{lookup('env','PWD')}}}}/templates/{template_file}.j2"
+        dest: "{{{{lookup('env','PWD')}}}}/configs/{{{{inventory_hostname}}}}_config_{dest_file_suffix}.conf"
     # Push Configuration to Device
     eos_config:
-        src: "{{{{{lookup('env','PWD')}}}}}/configs/{{{{ inventory_hostname }}}}_config_{dest_file_suffix}.conf"
+        src: "{{{{lookup('env','PWD')}}}}/configs/{{{{inventory_hostname}}}}_config_{dest_file_suffix}.conf"
 """
     return playbook_template
 
@@ -58,16 +58,20 @@ def main():
     with open(f"{dc_name}_hosts.ini", "w") as file:
         file.write(hosts_content)
 
+    # Ensure the playbooks directory exists
+    playbook_dir = "playbooks"
+    os.makedirs(playbook_dir, exist_ok=True)
+
     # Generate playbooks
     playbook_leafs = generate_playbook(dc_name, "leafs", "leaf", "bgp")
     playbook_spines = generate_playbook(dc_name, "spines", "spine", "")
     playbook_borderleafs = generate_playbook(dc_name, "borderleafs", "borderleaf", "bl")
 
-    with open(f"{dc_name}_leafs_playbook.yml", "w") as file:
+    with open(os.path.join(playbook_dir, f"{dc_name}_leafs_playbook.yml"), "w") as file:
         file.write(playbook_leafs)
-    with open(f"{dc_name}_spines_playbook.yml", "w") as file:
+    with open(os.path.join(playbook_dir, f"{dc_name}_spines_playbook.yml"), "w") as file:
         file.write(playbook_spines)
-    with open(f"{dc_name}_borderleafs_playbook.yml", "w") as file:
+    with open(os.path.join(playbook_dir, f"{dc_name}_borderleafs_playbook.yml"), "w") as file:
         file.write(playbook_borderleafs)
     
     print(f"Configuration files for {dc_name} generated successfully.")
