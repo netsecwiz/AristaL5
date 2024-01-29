@@ -1,0 +1,72 @@
+global:
+  tz6:
+    spine_ASN: 65000
+    lo0: 10.255.255.0/24
+    spine_peers: &id001
+    - 172.16.80.1
+    - 172.16.81.1
+    MTU: 9214
+tz6-spine1:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.0
+      mask: 32
+    Ethernet1:
+      ipv4: 172.16.80.0
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.80.2
+      mask: 31
+    Ethernet61:
+      ipv4: Link to Borderleaf1
+      mask: null
+    Ethernet62:
+      ipv4: Link to Borderleaf2
+      mask: null
+  BGP:
+    ASN: 65000
+tz6-spine2:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.255
+      mask: 32
+    Ethernet1:
+      ipv4: 172.16.81.0
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.81.2
+      mask: 31
+    Ethernet61:
+      ipv4: Link to Borderleaf1
+      mask: null
+    Ethernet62:
+      ipv4: Link to Borderleaf2
+      mask: null
+  BGP:
+    ASN: 65000
+tz6-leaf1:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.1
+      mask: 32
+    loopback1:
+      ipv4: 10.255.254.1
+      mask: 32
+  BGP:
+    ASN: 65002
+    spine-peers: *id001
+    spine-ASN: 65000
+  MLAG: Odd
+tz6-leaf2:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.2
+      mask: 32
+    loopback1:
+      ipv4: 10.255.254.1
+      mask: 32
+  BGP:
+    ASN: 65003
+    spine-peers: *id001
+    spine-ASN: 65000
+  MLAG: Even

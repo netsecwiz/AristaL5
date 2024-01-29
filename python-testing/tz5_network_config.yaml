@@ -1,0 +1,400 @@
+global:
+  tz5:
+    spine_ASN: 65000
+    lo0: 10.255.255.0/24
+    spine_peers:
+    - 172.16.80.1
+    - 172.16.81.1
+    MTU: 9214
+tz5-spine1:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.0
+      mask: 32
+    BGP:
+      ASN: 65000
+    Ethernet1:
+      ipv4: 172.16.80.0
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.80.2
+      mask: 31
+    Ethernet3:
+      ipv4: 172.16.80.4
+      mask: 31
+    Ethernet4:
+      ipv4: 172.16.80.6
+      mask: 31
+    Ethernet5:
+      ipv4: 172.16.80.8
+      mask: 31
+    Ethernet6:
+      ipv4: 172.16.80.10
+      mask: 31
+    Ethernet7:
+      ipv4: 172.16.80.12
+      mask: 31
+    Ethernet8:
+      ipv4: 172.16.80.14
+      mask: 31
+    Ethernet9:
+      ipv4: 172.16.80.16
+      mask: 31
+    Ethernet10:
+      ipv4: 172.16.80.18
+      mask: 31
+    Ethernet11:
+      ipv4: 172.16.80.20
+      mask: 31
+    Ethernet12:
+      ipv4: 172.16.80.22
+      mask: 31
+    Ethernet13:
+      ipv4: 172.16.80.24
+      mask: 31
+    Ethernet14:
+      ipv4: 172.16.80.26
+      mask: 31
+    Ethernet15:
+      ipv4: 172.16.80.28
+      mask: 31
+    Ethernet16:
+      ipv4: 172.16.80.30
+      mask: 31
+    Ethernet17:
+      ipv4: 172.16.80.32
+      mask: 31
+    Ethernet18:
+      ipv4: 172.16.80.34
+      mask: 31
+    Ethernet19:
+      ipv4: 172.16.80.36
+      mask: 31
+    Ethernet20:
+      ipv4: 172.16.80.38
+      mask: 31
+    Ethernet21:
+      ipv4: 172.16.80.40
+      mask: 31
+    Ethernet22:
+      ipv4: 172.16.80.42
+      mask: 31
+    Ethernet23:
+      ipv4: 172.16.80.44
+      mask: 31
+    Ethernet24:
+      ipv4: 172.16.80.46
+      mask: 31
+    Ethernet25:
+      ipv4: 172.16.80.48
+      mask: 31
+    Ethernet26:
+      ipv4: 172.16.80.50
+      mask: 31
+    Ethernet27:
+      ipv4: 172.16.80.52
+      mask: 31
+    Ethernet28:
+      ipv4: 172.16.80.54
+      mask: 31
+    Ethernet29:
+      ipv4: 172.16.80.56
+      mask: 31
+    Ethernet30:
+      ipv4: 172.16.80.58
+      mask: 31
+    Ethernet31:
+      ipv4: 172.16.80.60
+      mask: 31
+    Ethernet32:
+      ipv4: 172.16.80.62
+      mask: 31
+    Ethernet33:
+      ipv4: 172.16.80.64
+      mask: 31
+    Ethernet34:
+      ipv4: 172.16.80.66
+      mask: 31
+    Ethernet35:
+      ipv4: 172.16.80.68
+      mask: 31
+    Ethernet36:
+      ipv4: 172.16.80.70
+      mask: 31
+    Ethernet37:
+      ipv4: 172.16.80.72
+      mask: 31
+    Ethernet38:
+      ipv4: 172.16.80.74
+      mask: 31
+    Ethernet39:
+      ipv4: 172.16.80.76
+      mask: 31
+    Ethernet40:
+      ipv4: 172.16.80.78
+      mask: 31
+    Ethernet41:
+      ipv4: 172.16.80.80
+      mask: 31
+    Ethernet42:
+      ipv4: 172.16.80.82
+      mask: 31
+    Ethernet43:
+      ipv4: 172.16.80.84
+      mask: 31
+    Ethernet44:
+      ipv4: 172.16.80.86
+      mask: 31
+    Ethernet45:
+      ipv4: 172.16.80.88
+      mask: 31
+    Ethernet46:
+      ipv4: 172.16.80.90
+      mask: 31
+    Ethernet47:
+      ipv4: 172.16.80.92
+      mask: 31
+    Ethernet48:
+      ipv4: 172.16.80.94
+      mask: 31
+    Ethernet49:
+      ipv4: 172.16.80.96
+      mask: 31
+    Ethernet50:
+      ipv4: 172.16.80.98
+      mask: 31
+    Ethernet51:
+      ipv4: 172.16.80.100
+      mask: 31
+    Ethernet52:
+      ipv4: 172.16.80.102
+      mask: 31
+    Ethernet53:
+      ipv4: 172.16.80.104
+      mask: 31
+    Ethernet54:
+      ipv4: 172.16.80.106
+      mask: 31
+    Ethernet55:
+      ipv4: 172.16.80.108
+      mask: 31
+    Ethernet56:
+      ipv4: 172.16.80.110
+      mask: 31
+    Ethernet57:
+      ipv4: 172.16.80.112
+      mask: 31
+    Ethernet58:
+      ipv4: 172.16.80.114
+      mask: 31
+    Ethernet59:
+      ipv4: 172.16.80.116
+      mask: 31
+    Ethernet60:
+      ipv4: 172.16.80.118
+      mask: 31
+tz5-spine2:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.255
+      mask: 32
+    BGP:
+      ASN: 65000
+    Ethernet1:
+      ipv4: 172.16.81.0
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.81.2
+      mask: 31
+    Ethernet3:
+      ipv4: 172.16.81.4
+      mask: 31
+    Ethernet4:
+      ipv4: 172.16.81.6
+      mask: 31
+    Ethernet5:
+      ipv4: 172.16.81.8
+      mask: 31
+    Ethernet6:
+      ipv4: 172.16.81.10
+      mask: 31
+    Ethernet7:
+      ipv4: 172.16.81.12
+      mask: 31
+    Ethernet8:
+      ipv4: 172.16.81.14
+      mask: 31
+    Ethernet9:
+      ipv4: 172.16.81.16
+      mask: 31
+    Ethernet10:
+      ipv4: 172.16.81.18
+      mask: 31
+    Ethernet11:
+      ipv4: 172.16.81.20
+      mask: 31
+    Ethernet12:
+      ipv4: 172.16.81.22
+      mask: 31
+    Ethernet13:
+      ipv4: 172.16.81.24
+      mask: 31
+    Ethernet14:
+      ipv4: 172.16.81.26
+      mask: 31
+    Ethernet15:
+      ipv4: 172.16.81.28
+      mask: 31
+    Ethernet16:
+      ipv4: 172.16.81.30
+      mask: 31
+    Ethernet17:
+      ipv4: 172.16.81.32
+      mask: 31
+    Ethernet18:
+      ipv4: 172.16.81.34
+      mask: 31
+    Ethernet19:
+      ipv4: 172.16.81.36
+      mask: 31
+    Ethernet20:
+      ipv4: 172.16.81.38
+      mask: 31
+    Ethernet21:
+      ipv4: 172.16.81.40
+      mask: 31
+    Ethernet22:
+      ipv4: 172.16.81.42
+      mask: 31
+    Ethernet23:
+      ipv4: 172.16.81.44
+      mask: 31
+    Ethernet24:
+      ipv4: 172.16.81.46
+      mask: 31
+    Ethernet25:
+      ipv4: 172.16.81.48
+      mask: 31
+    Ethernet26:
+      ipv4: 172.16.81.50
+      mask: 31
+    Ethernet27:
+      ipv4: 172.16.81.52
+      mask: 31
+    Ethernet28:
+      ipv4: 172.16.81.54
+      mask: 31
+    Ethernet29:
+      ipv4: 172.16.81.56
+      mask: 31
+    Ethernet30:
+      ipv4: 172.16.81.58
+      mask: 31
+    Ethernet31:
+      ipv4: 172.16.81.60
+      mask: 31
+    Ethernet32:
+      ipv4: 172.16.81.62
+      mask: 31
+    Ethernet33:
+      ipv4: 172.16.81.64
+      mask: 31
+    Ethernet34:
+      ipv4: 172.16.81.66
+      mask: 31
+    Ethernet35:
+      ipv4: 172.16.81.68
+      mask: 31
+    Ethernet36:
+      ipv4: 172.16.81.70
+      mask: 31
+    Ethernet37:
+      ipv4: 172.16.81.72
+      mask: 31
+    Ethernet38:
+      ipv4: 172.16.81.74
+      mask: 31
+    Ethernet39:
+      ipv4: 172.16.81.76
+      mask: 31
+    Ethernet40:
+      ipv4: 172.16.81.78
+      mask: 31
+    Ethernet41:
+      ipv4: 172.16.81.80
+      mask: 31
+    Ethernet42:
+      ipv4: 172.16.81.82
+      mask: 31
+    Ethernet43:
+      ipv4: 172.16.81.84
+      mask: 31
+    Ethernet44:
+      ipv4: 172.16.81.86
+      mask: 31
+    Ethernet45:
+      ipv4: 172.16.81.88
+      mask: 31
+    Ethernet46:
+      ipv4: 172.16.81.90
+      mask: 31
+    Ethernet47:
+      ipv4: 172.16.81.92
+      mask: 31
+    Ethernet48:
+      ipv4: 172.16.81.94
+      mask: 31
+    Ethernet49:
+      ipv4: 172.16.81.96
+      mask: 31
+    Ethernet50:
+      ipv4: 172.16.81.98
+      mask: 31
+    Ethernet51:
+      ipv4: 172.16.81.100
+      mask: 31
+    Ethernet52:
+      ipv4: 172.16.81.102
+      mask: 31
+    Ethernet53:
+      ipv4: 172.16.81.104
+      mask: 31
+    Ethernet54:
+      ipv4: 172.16.81.106
+      mask: 31
+    Ethernet55:
+      ipv4: 172.16.81.108
+      mask: 31
+    Ethernet56:
+      ipv4: 172.16.81.110
+      mask: 31
+    Ethernet57:
+      ipv4: 172.16.81.112
+      mask: 31
+    Ethernet58:
+      ipv4: 172.16.81.114
+      mask: 31
+    Ethernet59:
+      ipv4: 172.16.81.116
+      mask: 31
+    Ethernet60:
+      ipv4: 172.16.81.118
+      mask: 31
+tz5-Brdr1:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.253
+      mask: 32
+    BGP:
+      ASN: 65001
+tz5-Brdr2:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.254
+      mask: 32
+    BGP:
+      ASN: 65001
+tz5-leaf1: {}
+tz5-leaf2: {}
+tz5-leaf3: {}
+tz5-leaf4: {}
