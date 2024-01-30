@@ -1,0 +1,130 @@
+global:
+  spine_ASN: 65000
+  lo0: 10.255.255.0/24
+  MTU: 9214
+tz7-2-spine1:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.0
+      mask: 32
+    Ethernet1:
+      ipv4: 172.16.80.0
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.80.2
+      mask: 31
+    Ethernet3:
+      ipv4: 172.16.80.4
+      mask: 31
+    Ethernet4:
+      ipv4: 172.16.80.6
+      mask: 31
+    Ethernet5:
+      ipv4: 172.16.80.8
+      mask: 31
+    Ethernet6:
+      ipv4: 172.16.80.10
+      mask: 31
+  BGP:
+    ASN: 65000
+tz7-2-spine2:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.255
+      mask: 32
+    Ethernet1:
+      ipv4: 172.16.81.0
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.81.2
+      mask: 31
+    Ethernet3:
+      ipv4: 172.16.81.4
+      mask: 31
+    Ethernet4:
+      ipv4: 172.16.81.6
+      mask: 31
+    Ethernet5:
+      ipv4: 172.16.81.8
+      mask: 31
+    Ethernet6:
+      ipv4: 172.16.81.10
+      mask: 31
+  BGP:
+    ASN: 65000
+tz7-2-leaf1:
+  interfaces:
+    loopback0: {}
+    Ethernet1:
+      ipv4: 172.16.80.0
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.81.0
+      mask: 31
+  BGP:
+    ASN: 65002
+  MLAG: Odd
+tz7-2-leaf2:
+  interfaces:
+    loopback0: {}
+    Ethernet1:
+      ipv4: 172.16.80.2
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.81.2
+      mask: 31
+  BGP:
+    ASN: 65003
+  MLAG: Even
+tz7-2-leaf3:
+  interfaces:
+    loopback0: {}
+    Ethernet1:
+      ipv4: 172.16.80.4
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.81.4
+      mask: 31
+  BGP:
+    ASN: 65004
+  MLAG: Odd
+tz7-2-leaf4:
+  interfaces:
+    loopback0: {}
+    Ethernet1:
+      ipv4: 172.16.80.6
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.81.6
+      mask: 31
+  BGP:
+    ASN: 65005
+  MLAG: Even
+tz7-2-borderleaf1:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.253
+      mask: 32
+    Ethernet1:
+      ipv4: 172.16.80.8
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.81.8
+      mask: 31
+  BGP:
+    ASN: 65001
+  MLAG: Odd
+tz7-2-borderleaf2:
+  interfaces:
+    loopback0:
+      ipv4: 10.255.255.254
+      mask: 32
+    Ethernet1:
+      ipv4: 172.16.80.10
+      mask: 31
+    Ethernet2:
+      ipv4: 172.16.81.10
+      mask: 31
+  BGP:
+    ASN: 65001
+  MLAG: Even

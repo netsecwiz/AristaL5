@@ -1,0 +1,248 @@
+global:
+  spine_ASN: 64800
+  lo0: 192.168.255.0/24
+  MTU: 9214
+tz10-spine1:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.0
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.0
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.1.2
+      mask: 31
+    Ethernet3:
+      ipv4: 192.168.1.4
+      mask: 31
+    Ethernet4:
+      ipv4: 192.168.1.6
+      mask: 31
+    Ethernet5:
+      ipv4: 192.168.1.8
+      mask: 31
+    Ethernet6:
+      ipv4: 192.168.1.10
+      mask: 31
+    Ethernet7:
+      ipv4: 192.168.1.12
+      mask: 31
+    Ethernet8:
+      ipv4: 192.168.1.14
+      mask: 31
+    Ethernet61:
+      ipv4: 192.168.1.252
+      mask: 31
+    Ethernet62:
+      ipv4: 192.168.1.254
+      mask: 31
+  BGP:
+    ASN: 64800
+tz10-spine2:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.255
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.2.0
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.2
+      mask: 31
+    Ethernet3:
+      ipv4: 192.168.2.4
+      mask: 31
+    Ethernet4:
+      ipv4: 192.168.2.6
+      mask: 31
+    Ethernet5:
+      ipv4: 192.168.2.8
+      mask: 31
+    Ethernet6:
+      ipv4: 192.168.2.10
+      mask: 31
+    Ethernet7:
+      ipv4: 192.168.2.12
+      mask: 31
+    Ethernet8:
+      ipv4: 192.168.2.14
+      mask: 31
+    Ethernet61:
+      ipv4: 192.168.2.252
+      mask: 31
+    Ethernet62:
+      ipv4: 192.168.2.254
+      mask: 31
+  BGP:
+    ASN: 64800
+tz10-leaf1:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.1
+      mask: 32
+    loopback1:
+      ipv4: 192.168.254.0
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.0
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.0
+      mask: 31
+  BGP:
+    ASN: 65001
+  MLAG: Odd
+tz10-leaf2:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.2
+      mask: 32
+    loopback1:
+      ipv4: 192.168.254.0
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.2
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.2
+      mask: 31
+  BGP:
+    ASN: 65001
+  MLAG: Even
+tz10-leaf3:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.3
+      mask: 32
+    loopback1:
+      ipv4: 192.168.254.1
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.4
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.4
+      mask: 31
+  BGP:
+    ASN: 65002
+  MLAG: Odd
+tz10-leaf4:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.4
+      mask: 32
+    loopback1:
+      ipv4: 192.168.254.1
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.6
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.6
+      mask: 31
+  BGP:
+    ASN: 65002
+  MLAG: Even
+tz10-leaf5:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.5
+      mask: 32
+    loopback1:
+      ipv4: 192.168.254.2
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.8
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.8
+      mask: 31
+  BGP:
+    ASN: 65003
+  MLAG: Odd
+tz10-leaf6:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.6
+      mask: 32
+    loopback1:
+      ipv4: 192.168.254.2
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.10
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.10
+      mask: 31
+  BGP:
+    ASN: 65003
+  MLAG: Even
+tz10-leaf7:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.7
+      mask: 32
+    loopback1:
+      ipv4: 192.168.254.3
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.12
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.12
+      mask: 31
+  BGP:
+    ASN: 65004
+  MLAG: Odd
+tz10-leaf8:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.8
+      mask: 32
+    loopback1:
+      ipv4: 192.168.254.3
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.14
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.14
+      mask: 31
+  BGP:
+    ASN: 65004
+  MLAG: Even
+tz10-borderleaf1:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.9
+      mask: 32
+    loopback1:
+      ipv4: 192.168.254.4
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.16
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.16
+      mask: 31
+  BGP:
+    ASN: 65000
+  MLAG: Odd
+tz10-borderleaf2:
+  interfaces:
+    loopback0:
+      ipv4: 192.168.255.10
+      mask: 32
+    loopback1:
+      ipv4: 192.168.254.4
+      mask: 32
+    Ethernet1:
+      ipv4: 192.168.1.18
+      mask: 31
+    Ethernet2:
+      ipv4: 192.168.2.18
+      mask: 31
+  BGP:
+    ASN: 65000
+  MLAG: Even

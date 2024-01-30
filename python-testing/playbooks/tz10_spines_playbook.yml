@@ -1,0 +1,15 @@
+---
+- hosts: spines_tz10
+  gather_facts: no
+  tasks:
+    - name: Register variables from underlay-tz10_all.yml
+      include_vars:
+        file: "{{lookup('env','PWD')}}/vars/underlay-tz10_all.yml"  
+        name: underlay       
+    - name: Create Spines Configuration
+      template:
+        src: "{{lookup('env','PWD')}}/templates/spine.j2"
+        dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_config_.conf"
+    # Push Configuration to Device
+    eos_config:
+        src: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_config_.conf"
