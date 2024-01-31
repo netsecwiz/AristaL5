@@ -1,0 +1,15 @@
+---
+- hosts: all
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Show run on all hosts
+      eos_command:
+        commands:
+          - "show run"
+      register: running_config  # Register the output to the variable
+
+    - name: Save to file
+      copy:
+        content: "{{ running_config.stdout[0] }}"
+        dest: "/home/coder/project/labfiles/AristaL5/Ansible-Part2/backups/{{ inventory_hostname }}-running-config.txt"
