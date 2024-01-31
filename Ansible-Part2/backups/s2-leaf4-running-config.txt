@@ -1,0 +1,1796 @@
+! Command: show running-config
+! device: s2-leaf4 (cEOSLab, EOS-4.30.1F-32315456.4301F (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret 5 $1$5O85YVVn$HrXcfOivJEnISTMb6xrJc.
+username arista privilege 15 role network-admin secret 5 $1$4VjIjfd1$XkUVulbNDESHFzcxDU.Tk1
+username arista ssh-key ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD8NlWsCHP9GzU8+yniO7Z8LGQXgIM4+wZoCn9BOFrKHTHTqFDTarvKemPk1LtZcyVOx9EGuxwF+wgP/H35aRDj4tlb+4MVWFYiAyhvdzzYI27WYwR1+NgScFkaaayJy3ktfekp0sTIhAiFudBH41I8P34BLpWbRkhwYgns+XFVZPfW4dRrB1DkIFz8tO+yBKxBgK7VX3HTFhz2dr/qMf47adtnHlz20D9t5xORjKRBND3odxjYp2VBrGcSxLU69wu8gj7/HOywJPC6WZbMmbgHgJXgicb9kDAv3IQwoKP27GlyS03woqvANB7GyvvcWqy8vaQJUx68mf6C14ocAnXB arista@tristan2-circa-1-78cec7e0-eos
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -cvcompression=gzip -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -cvaddr=192.168.0.5:9910 -cvauth=token,/tmp/token -cvvrf=default -taillogs -disableaaa
+   no shutdown
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname s2-leaf4
+dns domain atd.lab
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 4094
+!
+spanning-tree mst configuration
+   name circa
+   revision 1
+   instance 1 vlan  1,3,5-7,9-15,17,20-23,25-26,29,32-33,35-39,41-43,45-47,49,51,53
+   instance 1 vlan  55,57-61,63,97-99,116-147,149-151,153-159,161-195,197-299
+   instance 1 vlan  318-1114,1125-1163,1174-1214,1225-1263,1274-2255,2272-2999
+   instance 1 vlan  3300-3903,3906-3910,3914-4040,4043-4094
+   instance 2 vlan  3911-3912
+   instance 3 vlan  148,152,160,3905
+   instance 4 vlan  2256-2271
+   instance 5 vlan  18-19,24,27-28,34,40,44,96
+   instance 6 vlan  3000-3299,3904
+   instance 7 vlan  30-31,48,50,52,54,56,62,300-317
+   instance 8 vlan  64-95,100-115
+   instance 9 vlan  2,4,16,196
+   instance 10 vlan  8,1115-1124,1164-1173,1215-1224,1264-1273,4041
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+vlan 2
+   name infrastructure_mgmt
+!
+vlan 4
+   name slotswitch_mgmt
+!
+vlan 8
+   name towerswitch_mgmt
+!
+vlan 16
+   name CVM_mgmt
+!
+vlan 18
+   name iptv_backend
+!
+vlan 19
+   name IPTV_lowrise
+!
+vlan 20
+   name bms
+!
+vlan 21
+   name kiosks
+!
+vlan 22
+   name atm
+!
+vlan 23
+   name everi
+!
+vlan 24
+   name brightsign
+!
+vlan 26
+   name skidata
+!
+vlan 27
+   name dante
+!
+vlan 28
+   name qsysb
+!
+vlan 30
+   name sportsbook
+!
+vlan 31
+   name acs_playon
+!
+vlan 32
+   name pos
+!
+vlan 34
+   name qsys_tower
+!
+vlan 36
+   name Production
+!
+vlan 40
+   name Pro-Idium
+!
+vlan 44
+   name crestron_control
+!
+vlan 48
+   name slotzone1
+!
+vlan 50
+   name slotzone2
+!
+vlan 52
+   name slotzone3
+!
+vlan 54
+   name slotzone4
+!
+vlan 56
+   name slotzone5
+!
+vlan 62
+   name tablegames
+!
+vlan 64
+   name server_vlan1
+!
+vlan 65
+   name server_vlan2
+!
+vlan 66
+   name server_vlan3
+!
+vlan 67
+   name server_vlan4
+!
+vlan 68
+   name server_vlan5
+!
+vlan 69
+   name server_vlan6
+!
+vlan 70
+   name server_vlan7
+!
+vlan 71
+   name server_vlan8
+!
+vlan 72
+   name server_vlan9
+!
+vlan 73
+   name server_vlan10
+!
+vlan 74
+   name server_vlan11
+!
+vlan 75
+   name server_vlan12
+!
+vlan 76
+   name server_vlan13
+!
+vlan 77
+   name server_vlan14
+!
+vlan 78
+   name server_vlan15
+!
+vlan 79
+   name server_vlan16
+!
+vlan 80
+   name server_vlan17
+!
+vlan 81
+   name server_vlan18
+!
+vlan 82
+   name server_vlan19
+!
+vlan 83
+   name server_vlan20
+!
+vlan 84
+   name server_vlan21
+!
+vlan 85
+   name server_vlan22
+!
+vlan 86
+   name server_vlan23
+!
+vlan 87
+   name server_vlan24
+!
+vlan 88
+   name server_vlan25
+!
+vlan 89
+   name server_vlan26
+!
+vlan 90
+   name server_vlan27
+!
+vlan 91
+   name server_vlan28
+!
+vlan 92
+   name server_vlan29
+!
+vlan 93
+   name printers
+!
+vlan 94
+   name user_vms
+!
+vlan 95
+   name vmotion
+!
+vlan 96
+   name crestron_nvx
+!
+vlan 99
+   name nutanix_backplane
+!
+vlan 100
+   name server_100
+!
+vlan 101
+   name server_101
+!
+vlan 102
+   name server_102
+!
+vlan 103
+   name server_103
+!
+vlan 104
+   name server_104
+!
+vlan 105
+   name server_105
+!
+vlan 106
+   name server_106
+!
+vlan 107
+   name server_107
+!
+vlan 108
+   name server_108
+!
+vlan 109
+   name server_109
+!
+vlan 110
+   name server_110
+!
+vlan 111
+   name server_111
+!
+vlan 113
+   name server_113
+!
+vlan 115
+   name server_115
+!
+vlan 148
+   name lighting_sACN
+!
+vlan 152
+   name lighting_kinet
+!
+vlan 160
+   name lighting_control
+!
+vlan 196
+   name ztp
+!
+vlan 198
+   name it_test
+!
+vlan 199
+   name it
+!
+vlan 240
+   name corp_wifi
+!
+vlan 300-320,400
+!
+vlan 1100
+   name podium_voip
+!
+vlan 1102
+   name TR-B3-voip
+!
+vlan 1103
+   name TR-LD-voip
+!
+vlan 1104
+   name TR-B5-voip
+!
+vlan 1105
+   name TR-2A-voip
+!
+vlan 1106
+   name TR-2B-voip
+!
+vlan 1107
+   name TR-2C-voip
+!
+vlan 1108
+   name TR-3A-voip
+!
+vlan 1109
+   name TR-3B-voip
+!
+vlan 1110
+   name TR-3C-voip
+!
+vlan 1111
+   name MDF-voip
+!
+vlan 1112
+   name TR-4A-voip
+!
+vlan 1113
+   name TR-4B-voip
+!
+vlan 1114
+   name TR-4C-voip
+!
+vlan 1115
+   name TR-16-voip
+!
+vlan 1116
+   name TR-19-voip
+!
+vlan 1117
+   name TR-22-voip
+!
+vlan 1118
+   name TR-26-voip
+!
+vlan 1119
+   name TR-29-voip
+!
+vlan 1120
+   name TR-32-voip
+!
+vlan 1121
+   name TR-36-voip
+!
+vlan 1122
+   name TR-39-voip
+!
+vlan 1123
+   name TR-52-voip
+!
+vlan 1124
+   name TR-55-voip
+!
+vlan 1125
+   name TR-G1-voip
+!
+vlan 1126
+   name TR-G2-voip
+!
+vlan 1127
+   name TR-G3-voip
+!
+vlan 1128
+   name TR-G4-voip
+!
+vlan 1129
+   name TR-G5-voip
+!
+vlan 1130
+   name TR-G6-voip
+!
+vlan 1131
+   name TR-G7-voip
+!
+vlan 1132
+   name TR-G8-voip
+!
+vlan 1133
+   name TR-6-voip
+!
+vlan 1164
+   name tower_iptv
+!
+vlan 1166
+   name TR-22-IPTV
+!
+vlan 1167
+   name TR-26-IPTV
+!
+vlan 1168
+   name TR-29-IPTV
+!
+vlan 1169
+   name TR-32-IPTV
+!
+vlan 1170
+   name TR-36-IPTV
+!
+vlan 1171
+   name TR-39-IPTV
+!
+vlan 1172
+   name TR-52-IPTV
+!
+vlan 1173
+   name TR-55-IPTV
+!
+vlan 1200
+   name podium_data
+!
+vlan 1201
+   name TR-B2-data
+!
+vlan 1202
+   name TR-B3-data
+!
+vlan 1203
+   name TR-LD-data
+!
+vlan 1204
+   name TR-B5-data
+!
+vlan 1205
+   name TR-2A-data
+!
+vlan 1206
+   name TR-2B-data
+!
+vlan 1207
+   name TR-2C-data
+!
+vlan 1208
+   name TR-3A-data
+!
+vlan 1209
+   name TR-3B-data
+!
+vlan 1210
+   name TR-3C-data
+!
+vlan 1211
+   name MDF-data
+!
+vlan 1212
+   name TR-4A-data
+!
+vlan 1213
+   name TR-4B-data
+!
+vlan 1214
+   name TR-4C-data
+!
+vlan 1215
+   name tower_data
+!
+vlan 1216
+   name TR-19-data
+!
+vlan 1217
+   name TR-22-data
+!
+vlan 1218
+   name TR-26-data
+!
+vlan 1219
+   name TR-29-data
+!
+vlan 1220
+   name TR-32-data
+!
+vlan 1221
+   name TR-36-data
+!
+vlan 1222
+   name TR-39-data
+!
+vlan 1223
+   name TR-52-data
+!
+vlan 1224
+   name TR-55-data
+!
+vlan 1225
+   name TR-G1-data
+!
+vlan 1226
+   name TR-G2-data
+!
+vlan 1227
+   name TR-G3-data
+!
+vlan 1228
+   name TR-G4-data
+!
+vlan 1229
+   name TR-G5-data29
+!
+vlan 1230
+   name TR-G6-data
+!
+vlan 1231
+   name TR-G7-data
+!
+vlan 1232
+   name TR-G8-data
+!
+vlan 1233
+   name TR-6-data
+!
+vlan 1264
+   name TR-16-interel
+!
+vlan 1265
+   name TR-19-interel
+!
+vlan 1266
+   name TR-22-interel
+!
+vlan 1267
+   name TR-26-interel
+!
+vlan 1268
+   name TR-29-interel
+!
+vlan 1269
+   name TR-32-interel
+!
+vlan 1270
+   name TR-36-interel
+!
+vlan 1271
+   name TR-39-interel
+!
+vlan 1272
+   name TR-52-interel
+!
+vlan 1273
+   name tower_interel
+!
+vlan 1644
+   name ticketmaster
+!
+vlan 2001
+   name restaurant-barrys
+!
+vlan 2002
+   name restaurant-saginaw
+!
+vlan 2003
+   name restaurant-victory
+!
+vlan 2004
+   name restaurant-8east
+!
+vlan 2005
+   name restaurant-projectbbq
+!
+vlan 2011
+   name BestLockers
+!
+vlan 2240
+   name salto
+!
+vlan 2241
+   name salto2
+!
+vlan 2248
+   name dmz1
+!
+vlan 2249
+   name dmz2
+!
+vlan 2250
+   name dmz3
+!
+vlan 2251
+   name dmz4
+!
+vlan 2252
+   name dmz5
+!
+vlan 2253
+   name dmz6
+!
+vlan 2254
+   name dmz7
+!
+vlan 2255
+   name dmz8
+!
+vlan 2256
+   name park_assist_Inet
+!
+vlan 2257
+   name park_assist_mgmt
+!
+vlan 2258
+   name park_assist_signs_relays_convert
+!
+vlan 2259
+   name park_assist_kiosks
+!
+vlan 2260
+   name park_assist_L3_FC1_S1
+!
+vlan 2261
+   name park_assist_L3_FC1_S2
+!
+vlan 2262
+   name park_assist_L3_FC1_S3A
+!
+vlan 2263
+   name park_assist_L3_FC1_S3B
+!
+vlan 2264
+   name park_assist_L4_FC1_S1
+!
+vlan 2265
+   name park_assist_L4_FC1_S2
+!
+vlan 2266
+   name park_assist_L4_FC1_S3
+!
+vlan 2267
+   name park_assist_L5_FC1_S1A
+!
+vlan 2268
+   name park_assist_L5_FC1_S1B
+!
+vlan 2269
+   name park_assist_L5_FC1_S2
+!
+vlan 2270
+   name park_assist_L5_FC1_S3A
+!
+vlan 2271
+   name park_assist_L5_FC1_S3B
+!
+vlan 3001
+   name surveillance
+!
+vlan 3002
+   name surveillance_switch
+!
+vlan 3003
+   name surveillance_pc
+!
+vlan 3004
+   name surveillance_nvr
+!
+vlan 3011
+   name TR-B1-surveillance
+!
+vlan 3012
+   name TR-B2-surveillance
+!
+vlan 3013
+   name TR-B3-surveillance
+!
+vlan 3014
+   name TR-LD-surveillance
+!
+vlan 3015
+   name TR-B5-surveillance
+!
+vlan 3016
+   name TR-B1-surveillance2
+!
+vlan 3017
+   name TR-B3-surveillance2
+!
+vlan 3021
+   name TR-2A-surveillance
+!
+vlan 3022
+   name TR-2B-surveillance
+!
+vlan 3023
+   name TR-2C-surveillance
+!
+vlan 3031
+   name TR-3A-surveillance
+!
+vlan 3032
+   name TR-3B-surveillance
+!
+vlan 3033
+   name TR-3C-surveillance
+!
+vlan 3041
+   name TR-4A-surveillance
+!
+vlan 3042
+   name TR-4B-surveillance
+!
+vlan 3043
+   name TR-4C-surveillance
+!
+vlan 3101
+   name TR-16-surveillance
+!
+vlan 3102
+   name TR-19-surveillance
+!
+vlan 3103
+   name TR-22-surveillance
+!
+vlan 3104
+   name TR-26-surveillance
+!
+vlan 3105
+   name TR-29-surveillance
+!
+vlan 3106
+   name TR-32-surveillance
+!
+vlan 3107
+   name TR-36-surveillance
+!
+vlan 3108
+   name TR-39-surveillance
+!
+vlan 3109
+   name TR-52-surveillance
+!
+vlan 3110
+   name TR-55-surveillance
+!
+vlan 3201
+   name TR-G1-surveillance
+!
+vlan 3202
+   name TR-G2-surveillance
+!
+vlan 3203
+   name TR-G3-surveillance
+!
+vlan 3204
+   name TR-G4-surveillance
+!
+vlan 3205
+   name TR-G5-surveillance
+!
+vlan 3206
+   name TR-G6-surveillance
+!
+vlan 3207
+   name TR-G7-surveillance
+!
+vlan 3208
+   name TR-G8-surveillance
+!
+vlan 3901
+   name vrf_MGMT
+!
+vlan 3902
+   name vrf_users
+!
+vlan 3903
+   name vrf_surveillance
+!
+vlan 3904
+   name vrf_DB
+!
+vlan 3905
+   name vrf_app
+!
+vlan 3906
+   name vrf_gaming
+!
+vlan 3907
+   name vrf_PCI
+!
+vlan 3908
+   name vrf_DMZ
+!
+vlan 3909
+   name vrf_OT
+!
+vlan 3910
+   name vrf_IoT
+!
+vlan 3911
+   name vrf_Gues
+!
+vlan 3912
+   name vrf_AV
+!
+vlan 3913
+   name vrf_lighting
+!
+vlan 3914
+   name vrf_sportsbook
+!
+vlan 3919
+   name vrf_legacy
+!
+vlan 3920
+   name vrf_internet
+!
+vlan 3921
+   name vrf_WAN
+!
+vlan 3932
+   name default-transit
+!
+vlan 3933
+   name dmz-transit
+!
+vlan 3934
+   name surveillance-transit
+!
+vlan 3935
+   name lighting-transit
+!
+vlan 3999
+   name p2p-aruba
+!
+vlan 4000
+   name guest_wifi
+!
+vlan 4032
+   name iot_wifi
+!
+vlan 4036
+   name intelity_tabs
+!
+vlan 4040
+   name lighting_sacn
+!
+vlan 4041
+   name lighting_artnet
+!
+vlan 4042
+   name lighting_garage
+!
+vlan 4093
+   name mlag-bgp
+   trunk group mlagpeer
+!
+vlan 4094
+   name MLAG
+   trunk group mlagpeer
+!
+vrf instance WAN
+!
+vrf instance audio_video
+!
+vrf instance dmz
+!
+vrf instance gaming
+!
+vrf instance guest
+!
+vrf instance internet
+!
+vrf instance iot
+!
+vrf instance legacy
+!
+vrf instance lighting
+!
+vrf instance ot
+!
+vrf instance pci
+!
+vrf instance server_app
+!
+vrf instance server_db
+!
+vrf instance sportsbook
+!
+vrf instance surveillance
+!
+vrf instance users
+!
+management api http-commands
+   no shutdown
+!
+radius-server host 192.168.0.1 key 7 0207165218120E
+!
+aaa group server radius atds
+   server 192.168.0.1
+!
+aaa authentication login default group atds local
+aaa authorization exec default group atds local
+aaa authorization commands all default local
+!
+interface Port-Channel1
+   description MLAG for leafs
+   switchport mode trunk
+   switchport trunk group mlagpeer
+!
+interface Port-Channel4
+   description LACP-to-Host1-2
+   switchport trunk allowed vlan 100,198
+   switchport mode trunk
+   mlag 4
+!
+interface Ethernet1
+   channel-group 1 mode active
+!
+interface Ethernet2
+   no switchport
+   ip address 172.24.16.10/31
+!
+interface Ethernet3
+   no switchport
+   ip address 172.24.16.26/31
+!
+interface Ethernet4
+   channel-group 4 mode active
+!
+interface Ethernet6
+   channel-group 1 mode active
+!
+interface Loopback0
+   ip address 10.16.255.8/32
+!
+interface Loopback1
+   ip address 10.16.254.7/32
+!
+interface Management0
+   ip address 192.168.0.25/24
+!
+interface Vlan1
+   mtu 9192
+   no autostate
+   ip address virtual 10.16.0.1/22
+!
+interface Vlan2
+   description Voice-DLV
+   mtu 9192
+   no autostate
+   vrf users
+   ip address virtual 10.75.74.1/21
+!
+interface Vlan8
+   description Oasis.Servers
+   mtu 9192
+   no autostate
+   vrf legacy
+   ip helper-address 10.16.112.106
+   ip helper-address 10.16.112.107
+   ip igmp
+   pim ipv4 sparse-mode
+   ip address virtual 10.16.8.1/21
+!
+interface Vlan10
+   description Nutanix
+   mtu 9192
+   no autostate
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.16.1/24
+!
+interface Vlan20
+   description UPS
+   mtu 9192
+   no autostate
+   ip address virtual 10.16.20.1/24
+!
+interface Vlan23
+   description Otis
+   mtu 9192
+   no autostate
+   vrf server_app
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.23.1/24
+!
+interface Vlan24
+   description Bldg.Ctrl
+   mtu 9192
+   no autostate
+   vrf ot
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.24.1/24
+!
+interface Vlan25
+   description Surv.Cams
+   mtu 9192
+   no autostate
+   vrf surveillance
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.25.1/24
+!
+interface Vlan27
+   description QSYSA
+   mtu 9192
+   no autostate
+   vrf audio_video
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.27.1/24
+!
+interface Vlan30
+   mtu 9192
+   no autostate
+   vrf audio_video
+   ip helper-address 10.16.112.106
+   ip igmp
+   ip igmp version 2
+   ip address virtual 10.16.30.1/23
+!
+interface Vlan32
+   description Users
+   mtu 9192
+   no autostate
+   vrf users
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.32.1/21
+!
+interface Vlan40
+   description POS
+   mtu 9192
+   no autostate
+   vrf pci
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.40.1/22
+!
+interface Vlan44
+   description "Crestron MGMT"
+   mtu 9192
+   no autostate
+   vrf audio_video
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.44.1/23
+!
+interface Vlan96
+   description "Crestron Control"
+   mtu 9192
+   no autostate
+   vrf audio_video
+   ip helper-address 10.16.112.106
+   ip address virtual 10.10.96.1/21
+!
+interface Vlan97
+   description Keno
+   mtu 9192
+   no autostate
+   vrf gaming
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.97.1/24
+!
+interface Vlan98
+   no autostate
+   vrf dmz
+   ip helper-address 10.16.112.106
+   ip helper-address 10.16.112.107
+   ip address virtual 10.16.98.1/24
+!
+interface Vlan100
+   description TicketMaster.PC
+   mtu 9192
+   no autostate
+   vrf dmz
+   ip address virtual 10.16.100.2/24
+!
+interface Vlan110
+   description Skidata
+   mtu 9192
+   no autostate
+   vrf dmz
+   ip address virtual 10.16.110.1/24
+!
+interface Vlan111
+   description Servers.Public
+   mtu 9192
+   no autostate
+   vrf dmz
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.111.1/24
+!
+interface Vlan112
+   description Servers.Public.Attached
+   mtu 9192
+   no autostate
+   vrf server_app
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.112.1/24
+!
+interface Vlan113
+   description Servers.Private
+   mtu 9192
+   no autostate
+   vrf server_app
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.113.1/24
+!
+interface Vlan114
+   description IT
+   mtu 9192
+   no autostate
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.114.1/24
+!
+interface Vlan115
+   description IT.Testing
+   mtu 9192
+   no autostate
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.115.1/24
+!
+interface Vlan118
+   description AV.OLD
+   mtu 9192
+   no autostate
+   vrf audio_video
+   ip helper-address 10.16.112.106
+   ip igmp
+   ip igmp version 2
+   ip address virtual 10.16.118.1/24
+!
+interface Vlan120
+   description D.NEW.AV
+   no autostate
+   vrf audio_video
+   ip helper-address 10.16.112.106
+   ip helper-address 10.16.112.107
+   ip igmp
+   ip address virtual 10.16.120.1/21
+   ip address virtual 10.16.122.2/21 secondary
+!
+interface Vlan128
+   description SLOT_TOURNEY_VLAN
+   mtu 9192
+   no autostate
+   vrf gaming
+   ip helper-address 10.160.112.2
+   ip helper-address 10.160.112.106
+   ip helper-address 10.160.112.107
+   ip address virtual 10.16.128.1/24
+!
+interface Vlan151
+   description Salto
+   mtu 9192
+   no autostate
+   vrf ot
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.151.1/24
+!
+interface Vlan200
+   description Net.Mgmt
+   mtu 9192
+   no autostate
+   ip address virtual 10.16.200.1/22
+!
+interface Vlan240
+   description LV3C-C
+   no autostate
+   vrf users
+   ip helper-address 10.16.112.106
+   ip helper-address 10.16.112.107
+   ip address virtual 10.16.240.1/23
+!
+interface Vlan242
+   description air-E
+   mtu 9192
+   no autostate
+   vrf legacy
+   ip helper-address 10.16.112.106
+   ip helper-address 10.16.112.107
+   ip address virtual 10.16.242.1/23
+!
+interface Vlan244
+   description air-P
+   mtu 9192
+   no autostate
+   vrf legacy
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.244.1/24
+!
+interface Vlan245
+   description air-C
+   mtu 9192
+   no autostate
+   vrf legacy
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.245.1/24
+!
+interface Vlan247
+   description air-G
+   mtu 9192
+   no autostate
+   vrf guest
+   ip address virtual 10.16.247.1/24
+!
+interface Vlan248
+   description air-S
+   mtu 9192
+   no autostate
+   vrf legacy
+   ip helper-address 10.16.112.106
+   ip helper-address 10.16.112.107
+   ip address virtual 10.16.248.1/24
+!
+interface Vlan249
+   description vMotion
+   mtu 9192
+   no autostate
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.249.1/24
+!
+interface Vlan252
+   description Everi.L3
+   mtu 9192
+   no autostate
+   vrf dmz
+   ip address virtual 10.16.252.1/24
+!
+interface Vlan253
+   description ACS.PlayOn
+   mtu 9192
+   no autostate
+   vrf dmz
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.253.1/24
+!
+interface Vlan255
+   description BACON
+   mtu 9198
+   no autostate
+   vrf dmz
+   ip address virtual 10.255.255.4/28
+!
+interface Vlan310
+   description 2ND_FLOOR_ZONE_1
+   mtu 9192
+   no autostate
+   vrf gaming
+   ip helper-address 10.160.112.11
+   ip igmp
+   ip igmp version 2
+   ip igmp query-interval 60
+   ip igmp static-group 239.1.1.1
+   ip igmp static-group 239.1.1.2
+   ip igmp static-group 239.1.1.3
+   ip igmp static-group 239.1.1.4
+   ip igmp static-group 239.1.1.5
+   ip igmp static-group 239.1.1.6
+   ip igmp static-group 239.1.1.7
+   ip igmp static-group 239.1.2.1
+   ip igmp static-group 239.1.2.2
+   ip igmp static-group 239.1.2.3
+   ip igmp static-group 239.10.10.6
+   ip igmp static-group 239.10.10.7
+   pim ipv4 sparse-mode
+   ip address virtual 10.160.10.1/23
+!
+interface Vlan312
+   description VM_SERVERS
+   mtu 9192
+   no autostate
+   vrf server_app
+   ip igmp
+   pim ipv4 sparse-mode
+   ip address virtual 10.160.112.1/24
+!
+interface Vlan320
+   description 2ND_FLOOR_ZONE_2
+   mtu 9192
+   no autostate
+   vrf gaming
+   ip helper-address 10.160.112.11
+   ip igmp
+   ip igmp version 2
+   ip igmp query-interval 60
+   ip igmp static-group 239.1.1.1
+   ip igmp static-group 239.1.1.2
+   ip igmp static-group 239.1.1.3
+   ip igmp static-group 239.1.1.4
+   ip igmp static-group 239.1.1.5
+   ip igmp static-group 239.1.1.6
+   ip igmp static-group 239.1.1.7
+   ip igmp static-group 239.1.2.1
+   ip igmp static-group 239.1.2.2
+   ip igmp static-group 239.1.2.3
+   ip igmp static-group 239.10.10.6
+   ip igmp static-group 239.10.10.7
+   pim ipv4 sparse-mode
+   ip address virtual 10.160.20.1/23
+!
+interface Vlan330
+   description 1ND_FLOOR_ZONE_1
+   mtu 9192
+   no autostate
+   vrf gaming
+   ip helper-address 10.160.112.11
+   ip igmp
+   ip igmp version 2
+   ip igmp query-interval 60
+   ip igmp static-group 239.1.1.1
+   ip igmp static-group 239.1.1.2
+   ip igmp static-group 239.1.1.3
+   ip igmp static-group 239.1.1.4
+   ip igmp static-group 239.1.1.5
+   ip igmp static-group 239.1.1.6
+   ip igmp static-group 239.1.1.7
+   ip igmp static-group 239.1.2.1
+   ip igmp static-group 239.1.2.2
+   ip igmp static-group 239.1.2.3
+   ip igmp static-group 239.10.10.6
+   ip igmp static-group 239.10.10.7
+   pim ipv4 sparse-mode
+   ip address virtual 10.160.30.1/23
+!
+interface Vlan340
+   description 1ND_FLOOR_ZONE_2
+   mtu 9192
+   no autostate
+   vrf gaming
+   ip helper-address 10.160.112.11
+   ip igmp
+   ip igmp version 2
+   ip igmp query-interval 60
+   ip igmp static-group 239.1.1.1
+   ip igmp static-group 239.1.1.2
+   ip igmp static-group 239.1.1.3
+   ip igmp static-group 239.1.1.4
+   ip igmp static-group 239.1.1.5
+   ip igmp static-group 239.1.1.6
+   ip igmp static-group 239.1.1.7
+   ip igmp static-group 239.1.2.1
+   ip igmp static-group 239.1.2.2
+   ip igmp static-group 239.1.2.3
+   ip igmp static-group 239.11.11.6
+   ip igmp static-group 239.11.11.7
+   pim ipv4 sparse-mode
+   ip address virtual 10.160.40.1/23
+!
+interface Vlan350
+   description 1ND_FLOOR_ZONE_3
+   mtu 9192
+   no autostate
+   vrf gaming
+   ip helper-address 10.160.112.11
+   ip igmp
+   ip igmp version 2
+   ip igmp query-interval 60
+   ip igmp static-group 239.1.1.1
+   ip igmp static-group 239.1.1.2
+   ip igmp static-group 239.1.1.3
+   ip igmp static-group 239.1.1.4
+   ip igmp static-group 239.1.1.5
+   ip igmp static-group 239.1.1.6
+   ip igmp static-group 239.1.1.7
+   ip igmp static-group 239.1.2.1
+   ip igmp static-group 239.1.2.2
+   ip igmp static-group 239.1.2.3
+   ip igmp static-group 239.11.11.6
+   ip igmp static-group 239.11.11.7
+   pim ipv4 sparse-mode
+   ip address virtual 10.160.50.1/23
+!
+interface Vlan360
+   description TABLEGAMES_SWITCHES
+   mtu 9192
+   no autostate
+   vrf gaming
+   ip helper-address 10.160.112.11
+   ip igmp
+   ip igmp version 2
+   pim ipv4 sparse-mode
+   ip address virtual 10.160.60.1/23
+!
+interface Vlan370
+   description Transact_GG_ZONE_2&3
+   mtu 9192
+   no autostate
+   vrf gaming
+   ip helper-address 10.160.112.11
+   ip address virtual 10.160.70.1/23
+!
+interface Vlan390
+   description SWITCH_MANAGEMENT
+   mtu 9192
+   no autostate
+   ip address virtual 10.160.90.1/24
+!
+interface Vlan391
+   description SWITCH_MANAGEMENT-GGC
+   mtu 9192
+   no autostate
+   vrf dmz
+   ip address virtual 10.160.91.1/24
+!
+interface Vlan402
+   description Everi_CC
+   mtu 9192
+   no autostate
+   vrf dmz
+   ip helper-address 10.16.112.106
+   ip helper-address 10.16.112.107
+   ip helper-address 10.16.112.201
+   ip helper-address 10.80.100.248
+   ip address virtual 10.16.102.1/27
+!
+interface Vlan801
+   description GGC-Legacy-vlan1
+   mtu 9192
+   no autostate
+   vrf legacy
+   ip address virtual 10.0.1.1/24
+!
+interface Vlan802
+   description GGC-Legacy-vlan32
+   mtu 9192
+   no autostate
+   vrf legacy
+   ip address virtual 10.0.32.1/24
+!
+interface Vlan976
+   description GG_SportsBook
+   no autostate
+   vrf sportsbook
+   ip helper-address 10.16.112.106
+   ip helper-address 10.16.112.107
+   ip address virtual 10.10.176.1/24
+!
+interface Vlan1701
+   mtu 9192
+   no autostate
+   ip helper-address 10.16.112.106
+   ip address virtual 10.16.170.1/28
+!
+interface Vlan2000
+   description AP.Management
+   mtu 9192
+   no autostate
+   ip helper-address 10.16.112.106
+   ip helper-address 10.16.112.107
+   ip helper-address 10.16.112.201
+   ip helper-address 10.16.112.202
+   ip address virtual 10.20.0.1/24
+!
+interface Vlan2002
+   description AP.Mgmt.Tower
+   mtu 9192
+   no autostate
+   ip helper-address 10.16.112.106
+   ip helper-address 10.16.112.107
+   ip address virtual 10.20.2.1/23
+!
+interface Vlan4093
+   description mlag-bgp
+   mtu 9214
+   ip address 192.168.1.3/31
+!
+interface Vlan4094
+   no autostate
+   ip address 192.168.1.1/31
+!
+interface Vxlan1
+   !! vlan-aware-bundle it_infrastructure-vlans route-target both 21601:21601 vlan 10,249,2000,2002
+   !! vlan-aware-bundle user-vlans route-target both 21602:21602 vlan 2,32,240
+   !! vlan-aware-bundle surveillance-vlans route-target both 21603:21603 vlan 25
+   !! vlan-aware-bundle server_db-vlans route-target both 21604:21604
+   !! vlan-aware-bundle server_app-vlans route-target both 21605:21605 23,112-113,312
+   !! vlan-aware-bundle gaming-vlans route-target both 21606:21606 vlan 62,97,128,310,320,330,340,350,360,370,410-411,420-430
+   !! vlan-aware-bundle pci-vlans route-target both 21607:21607 vlan 40
+   !! vlan-aware-bundle dmz-vlans route-target both 21608:21608 vlan 98,251-253,401-402
+   !! vlan-aware-bundle ot-vlans route-target both 21609:21609 vlan 151
+   !! vlan-aware-bundle iot-vlans route-target both 21610:21610
+   !! vlan-aware-bundle guest-vlans route-target both 21611:21611 vlan 928
+   !! vlan-aware-bundle audio_video-vlans route-target both 21612:21612 vlan 27,30,44,96,118,120
+   !! vlan-aware-bundle lighting-vlans route-target both 21613:21613
+   !! vlan-aware-bundle sportsbook-vlans route-target both 21614:21614 vlan 976
+   !! vlan-aware-bundle legacy-vlans route-target both 21619:21619 vlan 8,801-802
+   !! vlan-aware-bundle server-app-cross-campus-vxlan route-target both 405:405 vlan 64-93,101-109
+   vxlan source-interface Loopback1
+   vxlan virtual-router encapsulation mac-address mlag-system-id
+   vxlan udp-port 4789
+   vxlan vlan 2,8,10,23,25,27,30,32,40,44,62,64-93,96-98,101-109,112-113,118,120,128,151,240,249,251-253,310,312,320,330,340,350,360,370,401-402,410-411,420-430,801-802,928,976,2000,2002 vni 160002,160008,160010,160023,160025,160027,160030,160032,160040,160044,160062,9990064-9990093,160096-160098,9990101-9990109,160112-160113,160118,160120,160128,160151,160240,160249,160251-160253,160310,160312,160320,160330,160340,160350,160360,160370,160401-160402,160410-160411,160420-160430,160801-160802,160928,160976,162000,162002
+   vxlan vrf audio_video vni 31612
+   vxlan vrf dmz vni 31608
+   vxlan vrf gaming vni 31606
+   vxlan vrf guest vni 31611
+   vxlan vrf iot vni 31610
+   vxlan vrf legacy vni 31619
+   vxlan vrf lighting vni 31613
+   vxlan vrf ot vni 31609
+   vxlan vrf pci vni 31607
+   vxlan vrf server_app vni 31605
+   vxlan vrf server_db vni 31604
+   vxlan vrf sportsbook vni 31614
+   vxlan vrf surveillance vni 31603
+   vxlan vrf users vni 31602
+   vxlan mlag source-interface Loopback1
+!
+ip virtual-router mac-address de:ad:be:ef:ca:fe
+!
+ip routing
+ip routing vrf WAN
+ip routing vrf audio_video
+ip routing vrf dmz
+ip routing vrf gaming
+ip routing vrf guest
+ip routing vrf internet
+ip routing vrf iot
+ip routing vrf legacy
+ip routing vrf lighting
+ip routing vrf ot
+ip routing vrf pci
+ip routing vrf server_app
+ip routing vrf server_db
+ip routing vrf sportsbook
+ip routing vrf surveillance
+ip routing vrf users
+!
+ip prefix-list loopback
+   seq 10 permit 10.16.255.0/24 ge 24
+   seq 20 permit 10.16.198.0/24 ge 24
+   seq 30 permit 10.16.100.0/28 ge 28
+!
+mlag configuration
+   domain-id mlag1
+   local-interface Vlan4094
+   peer-address 192.168.1.0
+   peer-link Port-Channel1
+!
+ntp server 192.168.0.1 iburst source Management0
+!
+ip radius source-interface Management0
+!
+route-map loopback permit 10
+   match ip address prefix-list loopback
+!
+router bgp 4200016002
+   !! rd means source
+   !! route target is destination
+   !! 999 is an identifier we use for cross campus vxlan, on the VNI
+   !! 1st number 2 = layer 2 vxlan, 3 = layer 3 vxlan, 4 = spanned cross campus layer2 vxlan
+   !! 2nd 2 digits = site id expect if it starts with a 4, 80 = CLV, 16 = DLV, 17 = GGC
+   !! 3rd 2 digits, or 2nd if starts with a 4 = VRF number
+   !! Examples, [2][80][02],[3][80][02],[4][02]
+   router-id 10.16.255.8
+   graceful-restart restart-time 300
+   graceful-restart
+   maximum-paths 4 ecmp 4
+   neighbor EVPN-OVERLAY peer group
+   neighbor EVPN-OVERLAY remote-as 65016
+   neighbor EVPN-OVERLAY update-source Loopback0
+   neighbor EVPN-OVERLAY ebgp-multihop
+   neighbor EVPN-OVERLAY send-community
+   neighbor EVPN-OVERLAY maximum-routes 0
+   neighbor SPINES peer group
+   neighbor SPINES remote-as 65016
+   neighbor SPINES send-community extended
+   neighbor underlay_ibgp peer group
+   neighbor underlay_ibgp remote-as 4200016002
+   neighbor underlay_ibgp next-hop-self
+   neighbor underlay_ibgp update-source 192.168.1.3
+   neighbor underlay_ibgp password 7 2rKpfK31TTnawWNMXE+CyA==
+   neighbor underlay_ibgp maximum-routes 12000 warning-only
+   neighbor 10.16.255.1 peer group EVPN-OVERLAY
+   neighbor 10.16.255.1 remote-as 65016
+   neighbor 10.16.255.2 peer group EVPN-OVERLAY
+   neighbor 10.16.255.2 remote-as 65016
+   neighbor 10.16.255.7 peer group EVPN-OVERLAY
+   neighbor 10.16.255.7 remote-as 4200016002
+   neighbor 172.24.16.11 peer group SPINES
+   neighbor 172.24.16.11 remote-as 65016
+   neighbor 172.24.16.27 peer group SPINES
+   neighbor 172.24.16.27 remote-as 65016
+   neighbor 192.168.1.2 peer group underlay_ibgp
+   redistribute connected
+   !
+   vlan-aware-bundle audio_video-vlans
+      rd 10.16.255.8:21612
+      route-target both 21612:21612
+      redistribute learned
+      vlan 27,30,44,96,118,120
+   !
+   vlan-aware-bundle dmz-vlans
+      rd 10.16.255.8:21608
+      route-target both 21608:21608
+      redistribute learned
+      vlan 98,251-253,401-402
+   !
+   vlan-aware-bundle gaming-vlans
+      rd 10.16.255.8:21606
+      route-target both 21606:21606
+      redistribute learned
+      vlan 62,97,128,310,320,330,340,350,360,370,410-411,420-430
+   !
+   vlan-aware-bundle guest-vlans
+      rd 10.16.255.8:21611
+      route-target both 21611:21611
+      redistribute learned
+      vlan 928
+   !
+   vlan-aware-bundle iot-vlans
+      rd 10.16.255.8:21610
+      route-target both 21610:21610
+      redistribute learned
+   !
+   vlan-aware-bundle it_infrastructure-vlans
+      rd 10.16.255.8:21601
+      route-target both 21601:21601
+      redistribute learned
+      vlan 10,249,2000,2002
+   !
+   vlan-aware-bundle legacy-vlans
+      rd 10.16.255.8:21619
+      route-target both 21619:21619
+      redistribute learned
+      vlan 8,801-802
+   !
+   vlan-aware-bundle lighting-vlans
+      rd 10.16.255.8:21613
+      route-target both 21613:21613
+      redistribute learned
+   !
+   vlan-aware-bundle ot-vlans
+      rd 10.16.255.8:21609
+      route-target both 21609:21609
+      redistribute learned
+      vlan 151
+   !
+   vlan-aware-bundle pci-vlans
+      rd 10.16.255.8:21607
+      route-target both 21607:21607
+      redistribute learned
+      vlan 40
+   !
+   vlan-aware-bundle server-app-cross-campus-vxlan
+      rd 10.16.255.8:405
+      route-target both 405:405
+      redistribute learned
+      vlan 64-93,101-109
+   !
+   vlan-aware-bundle server_app-vlans
+      rd 10.16.255.8:21605
+      route-target both 21605:21605
+      redistribute learned
+      vlan 23,112-113,312
+   !
+   vlan-aware-bundle server_db-vlans
+      rd 10.16.255.8:21604
+      route-target both 21604:21604
+      redistribute learned
+   !
+   vlan-aware-bundle sportsbook-vlans
+      rd 10.16.255.8:21614
+      route-target both 21614:21614
+      redistribute learned
+      vlan 976
+   !
+   vlan-aware-bundle surveillance-vlans
+      rd 10.16.255.8:21603
+      route-target both 21603:21603
+      redistribute learned
+      vlan 25
+   !
+   vlan-aware-bundle user-vlans
+      rd 10.16.255.8:21602
+      route-target both 21602:21602
+      redistribute learned
+      vlan 2,32,240
+   !
+   address-family evpn
+      bgp next-hop-unchanged
+      neighbor EVPN-OVERLAY activate
+   !
+   address-family ipv4
+      no neighbor EVPN-OVERLAY activate
+      neighbor SPINES activate
+      neighbor underlay_ibgp activate
+      network 10.16.2.214/32
+      network 10.16.254.7/32
+      network 10.16.255.8/32
+      network 192.168.1.2/32
+      network 0.0.0.0/0
+   !
+   vrf WAN
+      rd 10.16.255.8:31621
+      route-target import evpn 31621:31621
+      route-target export evpn 31621:31621
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf audio_video
+      rd 10.16.255.8:31612
+      route-target import evpn 31612:31612
+      route-target export evpn 31612:31612
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf dmz
+      rd 10.16.255.8:31608
+      route-target import evpn 31608:31608
+      route-target export evpn 31608:31608
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf gaming
+      rd 10.16.255.8:31606
+      route-target import evpn 31606:31606
+      route-target export evpn 31606:31606
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf guest
+      rd 10.16.255.8:31611
+      route-target import evpn 31611:31611
+      route-target export evpn 31611:31611
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf internet
+      rd 10.16.255.8:31620
+      route-target import evpn 31620:31620
+      route-target export evpn 31620:31620
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf iot
+      rd 10.16.255.8:31610
+      route-target import evpn 31610:31610
+      route-target export evpn 31610:31610
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf legacy
+      rd 10.16.255.8:31619
+      route-target import evpn 31619:31619
+      route-target export evpn 31619:31619
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf lighting
+      rd 10.16.255.8:31613
+      route-target import evpn 31613:31613
+      route-target export evpn 31613:31613
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf ot
+      rd 10.16.255.8:31609
+      route-target import evpn 31609:31609
+      route-target export evpn 31609:31609
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf pci
+      rd 10.16.255.8:31607
+      route-target import evpn 31607:31607
+      route-target export evpn 31607:31607
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf server_app
+      rd 10.16.255.8:31605
+      route-target import evpn 31605:31605
+      route-target export evpn 31605:31605
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf server_db
+      rd 10.16.255.8:31604
+      route-target import evpn 31604:31604
+      route-target export evpn 31604:31604
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf sportsbook
+      rd 10.16.255.8:31614
+      route-target import evpn 31614:31614
+      route-target export evpn 31614:31614
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf surveillance
+      rd 10.16.255.8:31603
+      route-target import evpn 31603:31603
+      route-target export evpn 31603:31603
+      router-id 10.16.255.8
+      redistribute connected
+   !
+   vrf users
+      rd 10.16.255.8:31602
+      route-target import evpn 31602:31602
+      route-target export evpn 31602:31602
+      router-id 10.16.255.8
+      redistribute connected
+!
+end

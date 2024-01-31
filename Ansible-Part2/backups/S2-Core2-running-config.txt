@@ -1,0 +1,114 @@
+! Command: show running-config
+! device: s2-core2 (cEOSLab, EOS-4.30.1F-32315456.4301F (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret 5 $1$5O85YVVn$HrXcfOivJEnISTMb6xrJc.
+username arista privilege 15 role network-admin secret 5 $1$4VjIjfd1$XkUVulbNDESHFzcxDU.Tk1
+username arista ssh-key ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD8NlWsCHP9GzU8+yniO7Z8LGQXgIM4+wZoCn9BOFrKHTHTqFDTarvKemPk1LtZcyVOx9EGuxwF+wgP/H35aRDj4tlb+4MVWFYiAyhvdzzYI27WYwR1+NgScFkaaayJy3ktfekp0sTIhAiFudBH41I8P34BLpWbRkhwYgns+XFVZPfW4dRrB1DkIFz8tO+yBKxBgK7VX3HTFhz2dr/qMf47adtnHlz20D9t5xORjKRBND3odxjYp2VBrGcSxLU69wu8gj7/HOywJPC6WZbMmbgHgJXgicb9kDAv3IQwoKP27GlyS03woqvANB7GyvvcWqy8vaQJUx68mf6C14ocAnXB arista@tristan2-circa-1-78cec7e0-eos
+!
+daemon TerminAttr
+   exec /usr/bin/TerminAttr -cvcompression=gzip -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent -cvaddr=192.168.0.5:9910 -cvauth=token,/tmp/token -cvvrf=default -taillogs -disableaaa
+   no shutdown
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname s2-core2
+dns domain atd.lab
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+vlan 3901
+   name vrf_MGMT
+!
+vlan 3902
+   name vrf_users
+!
+vlan 3903
+   name vrf_surveillance
+!
+vlan 3904
+   name vrf_DB
+!
+vlan 3905
+   name vrf_app
+!
+vlan 3906
+   name vrf_gaming
+!
+vlan 3907
+   name vrf_PCI
+!
+vlan 3908
+   name vrf_DMZ
+!
+vlan 3909
+   name vrf_OT
+!
+vlan 3910
+   name vrf_IoT
+!
+vlan 3911
+   name vrf_Gues
+!
+vlan 3912
+   name vrf_AV
+!
+vlan 3913
+   name vrf_lighting
+!
+vlan 3914
+   name vrf_sportsbook
+!
+vlan 3919
+   name vrf_legacy
+!
+vlan 3920
+   name vrf_internet
+!
+vlan 3921
+   name vrf_WAN
+!
+management api http-commands
+   no shutdown
+!
+radius-server host 192.168.0.1 key 7 0207165218120E
+!
+aaa group server radius atds
+   server 192.168.0.1
+!
+aaa authentication login default group atds local
+aaa authorization exec default group atds local
+aaa authorization commands all default local
+!
+interface Ethernet1
+   switchport mode trunk
+!
+interface Ethernet2
+   switchport mode trunk
+!
+interface Ethernet3
+   switchport mode trunk
+!
+interface Ethernet4
+   switchport mode trunk
+!
+interface Ethernet6
+   shutdown
+!
+interface Management0
+   ip address 192.168.0.203/24
+!
+ip routing
+!
+ntp server 192.168.0.1 iburst source Management0
+!
+ip radius source-interface Management0
+!
+end
